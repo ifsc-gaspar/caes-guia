@@ -77,7 +77,7 @@ Utilize um administrador de banco de dados como [dbeaver](https://dbeaver.io/dow
 
 Execute os comandos do [script de criação das tabelas](../docs/files/script_criacao_tabelas.sql) no software escolhido para se conectar ao banco.
 
-Agora importe nas tabelas `cidade`, `estado` e `endereco` os dados contidos respectivamente nos arquivos [cidades.zip](../docs/data/cidade-estado-endereco/cidades.zip), [estados.zip](../docs/data/cidade-estado-endereco/estados.zip) e [enderecos.zip](../docs/data/cidade-estado-endereco/enderecos.zip).
+Agora importe nas tabelas `estado`, `cidade` e `endereco` os dados contidos respectivamente nos arquivos [estados.zip](../docs/data/cidade-estado-endereco/estados.zip), [cidades.zip](../docs/data/cidade-estado-endereco/cidades.zip) e [enderecos.zip](../docs/data/cidade-estado-endereco/enderecos.zip).
 
 ### Rodando a aplicação
 
