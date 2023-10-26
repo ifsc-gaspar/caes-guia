@@ -5,7 +5,8 @@ import hkeller.escolacaesguia.atualizarCao.model.AtualizarCao;
 import hkeller.escolacaesguia.atualizarCao.repository.AtualizarCaoRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import static hkeller.escolacaesguia.atualizarCao.mapper.AtualizarCaoMapper.*;
+
+import static hkeller.escolacaesguia.atualizarCao.mapper.AtualizarCaoMapper.mapToAtualizarCao;
 
 
 @Service

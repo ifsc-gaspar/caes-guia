@@ -48,7 +48,7 @@ public class SocializadorEntity implements Serializable {
   @Column(name = "estado_civil")
   private EnumEstadoCivil estadoCivil;
 
-  @OneToOne(optional = false, orphanRemoval = true)
+  @OneToOne(optional = false, orphanRemoval = true, cascade = CascadeType.ALL)
   @JoinColumn(name = "id_pessoa", nullable = false)
   private PessoaEntity pessoaEntity;
 

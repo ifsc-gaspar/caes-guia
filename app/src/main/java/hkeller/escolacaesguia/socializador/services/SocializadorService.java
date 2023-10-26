@@ -1,8 +1,8 @@
 package hkeller.escolacaesguia.socializador.services;
 
 import hkeller.escolacaesguia.common.mapper.GenericMapper;
-import hkeller.escolacaesguia.pessoa.PessoaEntity;
 import hkeller.escolacaesguia.pessoa.PessoaDto;
+import hkeller.escolacaesguia.pessoa.PessoaEntity;
 import hkeller.escolacaesguia.pessoa.repository.PessoaRepository;
 import hkeller.escolacaesguia.socializador.dto.SocializadorDto;
 import hkeller.escolacaesguia.socializador.entity.SocializadorEntity;
@@ -34,7 +34,6 @@ public class SocializadorService {
   public void insert(SocializadorDto dto) {
     SocializadorEntity socializadorEntity = socializadorMapper.toEntity(dto, SocializadorEntity.class);
     socializadorEntity.setPessoaEntity(pessoaMapper.toEntity(dto.getPessoa(), PessoaEntity.class));
-    pessoaRepository.save(socializadorEntity.getPessoaEntity());
     socializadorRepository.save(socializadorEntity);
   }
 

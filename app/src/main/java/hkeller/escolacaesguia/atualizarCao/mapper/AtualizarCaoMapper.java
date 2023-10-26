@@ -1,11 +1,11 @@
 package hkeller.escolacaesguia.atualizarCao.mapper;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import hkeller.escolacaesguia.atualizarCao.dto.AtualizarCaoDto;
 import hkeller.escolacaesguia.atualizarCao.dto.RequisicaoCadastroAtualizarCaoDto;
 import hkeller.escolacaesguia.atualizarCao.model.AtualizarCao;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AtualizarCaoMapper {
   public static AtualizarCao mapToAtualizarCao(RequisicaoCadastroAtualizarCaoDto atualizarCaoDto) {

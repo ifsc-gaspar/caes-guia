@@ -1,6 +1,6 @@
 package hkeller.escolacaesguia.user.mapper;
 
-import hkeller.escolacaesguia.pessoa.Pessoa;
+import hkeller.escolacaesguia.pessoa.PessoaEntity;
 import hkeller.escolacaesguia.tutor.dtos.CadastroTutorDto;
 import hkeller.escolacaesguia.user.dtos.UsuarioDto;
 import hkeller.escolacaesguia.user.models.User;
@@ -25,7 +25,7 @@ public class UsuarioMapper {
     public static User mapToUsuario(CadastroTutorDto cadastroTutorDto) {
         User usuario = User.builder()
             .pessoa(
-              Pessoa.builder()
+              PessoaEntity.builder()
                 .nome(cadastroTutorDto.getNome())
                 .cpf(cadastroTutorDto.getCpf())
                 .dataNascimento(cadastroTutorDto.getDataNascimento())
@@ -47,7 +47,7 @@ public class UsuarioMapper {
             .password(usuarioDto.getPassword())
             .password(usuarioDto.getPassword())
             .pessoa(
-              Pessoa.builder()
+              PessoaEntity.builder()
                 .nome(usuarioDto.getNome())
                 .cpf(usuarioDto.getCpf())
                 .dataNascimento(usuarioDto.getDataNascimento())

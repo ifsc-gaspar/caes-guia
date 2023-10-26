@@ -1,14 +1,13 @@
 package hkeller.escolacaesguia.endereco.services;
 
-import java.util.Optional;
-
+import hkeller.escolacaesguia.endereco.dtos.EnderecoDto;
+import hkeller.escolacaesguia.endereco.mapper.EnderecoMapper;
+import hkeller.escolacaesguia.endereco.model.Endereco;
+import hkeller.escolacaesguia.endereco.repository.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import hkeller.escolacaesguia.endereco.dtos.EnderecoDto;
-import hkeller.escolacaesguia.endereco.model.Endereco;
-import hkeller.escolacaesguia.endereco.repository.EnderecoRepository;
-import hkeller.escolacaesguia.endereco.mapper.EnderecoMapper;
+import java.util.Optional;
 
 @Service
 public class BuscarEnderecoPorCepService {
