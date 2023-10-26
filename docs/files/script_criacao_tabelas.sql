@@ -247,3 +247,19 @@ do $$
 
 -- Para logar no sistema, utilizar o login "admin@example.com" e senha "senha123"
 
+CREATE TABLE Voluntario (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(255),
+    nacionalidade VARCHAR(255),
+    estado_civil VARCHAR(255),
+    funcao VARCHAR(255),
+    identidade VARCHAR(255),
+    rua VARCHAR(255),
+    cidade VARCHAR(255),
+    estado VARCHAR(255),
+    cep VARCHAR(20),
+    numero VARCHAR(20),
+    email VARCHAR(255),
+    telefone VARCHAR(20),
+    cao VARCHAR(20)
+);

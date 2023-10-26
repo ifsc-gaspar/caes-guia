@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário de Informações</title>
+  <style>
+    .colunas {
+        display: flex; /* Usa o modelo flex para alinhar verticalmente as colunas */
+        align-items: flex-start; /* Alinha as colunas no topo */
+        justify-content: space-between; /* Espaço igual entre as colunas */
+        padding: 20px;
+    }
+
+    .coluna {
+        width: 48%; /* Largura de cada coluna */
+        text-align: left; /* Alinha o conteúdo à esquerda */
+    }
+
+    body {
+        margin-left: 1.5cm;
+        margin-right: 1cm;
+        font-family: Arial, sans-serif;
+        font-size: 21px;
+        color: black;
+    }
+
+
+  </style>
+</head>
+<body>
+<form th:object="${voluntarios}" class="needs-validation" novalidate>
+<div>
+  <img src="cguia.jpg" alt="cabeça">
+
+  <br>
+  <br>
+
+
+  <b>TERMO DE ADESÃO PARA TRABALHO VOLUNTÁRIO DE FAMÍLIA ACOLHEDORA DE MATRIZ/ REPRODUTOR/ CÃO EM SOCIALIZAÇÃO – Nº DO CÃO</b>
+  <br>
+  <br>
+  <br>
+
+  <b>ENTIDADE: ESCOLA HKELLER: ESCOLA DE CÃES-GUIAS HELEN KELLER – ECG-HK</b>, neste ato nomeada Escola HKelller, com sede à Alameda Delfim de Pádua Peixoto Filho,, nº 440, ao lado do Parque Ecológico, bairro dos Municípios, Balneário Camboriú/ SC, Brasil, CEP 88.337-325, e-mail contato@caoguia.org.br, telefone 47 99712-0986, Atos Constitutivos registrados no Cartório de Registro de Títulos e Documentos e Pessoas Jurídicas de Balneário Camboriú/ SC, em 17/04/2008, sob o nº Termo 3044, Livro A 14, Folha 132, arquivados em Cartório e com CNPJ/ MF, sob o nº 03.979.637/0001-60, neste ato representada pelo seu presidente Sr. Emílio Dalçoquio Neto, brasileiro, casado, empresário, portador da cédula de ID nº 1.403.254 – SSP/ SC e CPF nº 614.511.509-20, residente e domiciliado a Rua Fermino Vieira, nº 472, bairro Espinheiros, Itajaí/ SC, Brasil, CEP 00.000-000;
+
+
+  <br>
+  <br>
+  <br>
+
+  <b>VOLUNTÁRIO:</b> <p th:text="'Nome: ' + ${voluntario.nome} + ', Nacionalidade: ' + ${voluntario.nacionalidade} + ', Estado Civil: ' + ${voluntario.estadoCivil} + ', Função: ' + ${voluntario.funcao} + ', portador da cédula de ID nº ' + ${voluntario.identidade} + ', residente e domiciliado(a) em ' + ${voluntario.rua + ', ' + voluntario.cidade + ', ' + voluntario.estado} + ', CEP ' + ${voluntario.cep} + ', e-mail ' + ${voluntario.email} + ', telefone ' + ${voluntario.telefone}" id="dadosFormulario"></p>
+
+  <br>
+            <br>
+            <br>
+
+            <b>DO OBJETO</b>
+
+            <br>
+            <br>
+
+            <b>Cláusula 1ª</b>
+
+            <br>
+            <br>
+
+            1.1 O presente termo tem como OBJETO a regulamentação da adesão aos serviços que serão prestados pelo <b>VOLUNTÁRIO</b>, denominado de <b>Família Acolhedora e/ ou Socializadora de propriedade Escola de Cães-Guias Helen Keller</b>, conforme termo assinado em conjunto.
+
+            <br>
+            <br>
+
+            1.2 <b>DESCRIÇÃO DO CÃO</b>
+
+            <br>
+
+            <div class="colunas">
+                <br>
+
+              <p><b><p th:text="'Nome:  ' + ${voluntario.cao}" id="dadosFormulario"></p>
+                    <br>
+                    Sexo: Macho
+                    <br>
+                    Raça: Retriever do Labrador
+                    <br>
+                </b>
+                </p>
+                <br>
+                <p><b>Microchip nº: 000000000000000
+                    <br>
+                    Cor:Preto
+                    <br>
+                    Data de Nascimento: 00/00/2022
+                    <br>
+                </b>
+                </p>
+            </div>
+
+            <br>
+</div>
+<div>
+  <img src="cguia.jpg" alt="cabeça">
+  <br>
+  <br>
+
+  <b>DAS OBRIGAÇÕES DO VOLUNTÁRIO</b>
+
+  <br>
+  <br>
+
+  <b>Cláusula 2ª - </b>O voluntário, ao concordar com a responsabilidade de acolher e/ ou socializar este cão, se compromete a auxiliar a entidade, especialmente nas atividades de melhor convivência com o meio que nos cerca, como no convívio familiar, e somente na função que lhe couber em se tratando de cão em treinamento, visando o bem-estar do animal,<b>, comprometendo e executando as seguintes obrigações:</b>
+
+  <br>
+  <br>
+
+
+  2.1 Preservar a saúde e integridade do cão, informando imediatamente a HKeller sobre qualquer anormalidade, ocorrida e/ ou percebida.
+
+  <br>
+
+  2.2 Manter os cuidados de higiene e limpeza em dia, tanto do cão com banhos mensais e escovação diária, como o ambiente que o cerca.
+
+  <br>
+  <br>
+
+  2.3 Alimentar o cão de acordo com o indicado pela HKeller, bem como não introduzir outros alimentos a dieta sem prévia autorização.
+
+  <br>
+  <br>
+
+  2.4 Realizar o controle de peso semanalmente do cão, mantendo-o sempre dentro do peso adequado conforme os critérios estabelecidos pela HKeller, e estando ciente que cães com sobrepeso precisaram ser avaliados pela HKeller.
+
+  <br>
+  <br>
+
+  2.5 Proporcionar momentos de lazer, visando o bem-estar do cão, estando ciente de que deve buscar, no mínimo semanalmente uma atividade ao ar livre.
+
+  <br>
+  <br>
+
+  2.6 Socializar dentro dos padrões, instruções e do Manual do Socializador da HKeller, bem como reservar o mínimo de 1 (uma) hora por semana, para encontro presencial ou online, conforme demanda, com o Responsável pelo Desenvolvimento de Filhotes designado pela HKeller.
+
+  <br>
+  <br>
+
+  2.7 Seguir as instruções de treinos e praticar atividade física diariamente, estando ciente de que o cão poderá praticar determinadas atividades físicas, de acordo com suas faixas etárias, sob prévia anuência da HKeller.
+
+  <br>
+  <br>
+
+  2.8 Solicitar aprovação da HKeller para uso de outros equipamentos ou brinquedos que não sejam os entregues pela escola.
+
+  <br>
+  <br>
+
+  2.9 É obrigatório que o socializador voluntário adentre com o cão em socialização, em ambientes públicos e privados, de uso coletivo, munido dos itens previstos em lei e decreto, ou seja, o cão deve estar com guia e coleira contendo a sua placa de identificação, carteira de vacinação e capa de treinamento, bem como portar sua carteira de identificação como socializador.
+
+  <br>
+  <br>
+
+  2.10 Informar previamente a HKeller em cada de mudança de endereço.
+
+  <br>
+
+</div>
+
+<div>
+
+  <img src="cguia.jpg" alt="cabeça">
+  <br>
+  <br>
+
+  2.11 Estar ciente de que não poderá deixar o cão sob os cuidados de outra pessoa ou entidade, sem prévio consentimento da HKeller.
+
+  <br>
+  <br>
+
+  2.12 Administrar toda medicação necessária como vacinas, antiparasitários, e outros que venham a ser necessários, conforme estabelecido pela HKeller ou receitado pelo médico veterinário indicado, exclusivamente, pela HKeller. Exceções, como ida ao médico veterinário não indicado e em eventuais viagens, a escola deve ser informada imediatamente.
+
+  <br>
+  <br>
+
+  2.13 Estar ciente de que o voluntário é responsável por qualquer dano material que o cão causar a si ou a terceiros durante o período da socialização e/ ou acolhimento, ficando a HKeller isenta de qualquer ressarcimento decorrente deste dano.
+
+  <br>
+  <br>
+
+  2.14 Portar, sempre, sacolas plásticas ou outro coletor quando estiver com o cão em locais públicos, para remover as fezes toda vez que ocorrer.
+
+  <br>
+  <br>
+
+  2.15 Devolver ao término da socialização/ acolhimento do cão, todo material descrito na clausula 5ª deste termo a HKeller.
+
+  <br>
+  <br>
+
+  2.16 Atender às convocações de reuniões efetuadas pela escola.
+
+  <br>
+  <br>
+
+  2.17 Atender aos requisitos de reserva de direito de uso de imagem e voz.
+
+  <br>
+  <br>
+
+  2.18 Fica o voluntário ciente de que, na ocasião da visita técnica da Federação Internacional de Cães-Guias à HKeller para recertificação à esta federação, este cão poderá ser escolhido aleatoriamente para ser visitado, e uma comissão fará visita técnica sem prévio comunicado ao voluntário, a fim de avaliar a integridade do cão e o trabalho que está sendo realizado junto à HKeller, sempre com foco em sua qualidade de vida e bem-estar.
+
+  <br>
+  <br>
+
+  2.19 Caso o voluntário deseje atuar em outras atividades da escola durante a vigência deste instrumento, deverá solicitar, mediante documento escrito, que lhe seja permitido a participação na atividade pretendida, cujo aceite pela escola dependerá, também, da compatibilidade entre os horários das tarefas.
+
+  <br>
+  <br>
+  <br>
+
+  <b>DA REMUNERAÇÃO</b>
+
+  <br>
+  <br>
+
+
+  <b>Cáusula 3ª </b>– Os serviços prestados pelo voluntário são de caráter gratuito, não cabendo qualquer tipo de remuneração a título de contraprestação, nem tampouco gera vínculo trabalhista e nem obrigação de natureza trabalhista, previdenciária ou afim, de acordo com o Art. 3, da Lei nº 9.608 de Fevereiro de 1998.
+
+  <br>
+
+</div>
+<div>
+
+  <img src="cguia.jpg" alt="cabeça">
+  <br>
+  <br>
+
+  <b>Parágrafo único</b> – O voluntário poderá ser ressarcido pelas despesas que comprovadamente realizar no desempenho das atividades voluntárias (Art. 3, da Lei nº 9.608 de Fevereiro de 1998), desde que as despesas a serem ressarcidas tenham sido expressamente autorizadas pela HKeller e mediante comprovação nota fiscal. O reembolso será feito mediante assinatura de recibo por parte do voluntário. Caso o voluntário não deseje reembolso, deverá se manifestar expressamente, mediante termo escrito, desonerando, assim, a entidade do compromisso estipulado neste parágrafo.
+
+  <br>
+  <br>
+
+  <b>DAS OBRIGAÇÕES DA HKELLER</b>
+
+  <br>
+  <br>
+
+  <b>Cláusula 4</b> – A HKeller tem o intuito de ter voluntários socializadores e/ou acolhedores capacitados, promovendo qualidade de vida e ensino aos seus cães, por este motivo dar-se-á às seguintes obrigações:
+
+  <br>
+  <br>
+
+  4.1 Realizar encontros periódicos, visando avaliar o cão e o voluntário socializador e/ ou acolhedor, bem como instruir para ser crescimento dentro do programa HKeller e inspecionar se os itens da cláusula 2ª estão sendo cumpridos.
+
+  <br>
+  <br>
+
+  4.2 Dar suporte profissional técnico e veterinário, visando a qualidade nos cuidados, ensinamento e manutenção em geral do cão, uma vez que a HKeller é a responsável pelos custos destes profissionais.
+
+  <br>
+  <br>
+
+  4.3 Registrar todas as atividades realizadas junto ao voluntário e ao cão.
+
+  <br>
+  <br>
+
+  4.4 Fornecer equipamentos, medicamentos e alimentação necessários neste período de formação, bem como os custeios destes itens.
+
+  <br>
+  <br>
+  <br>
+
+  <b>DOS MATERIAIS CEDIDOS</b>
+
+  <br>
+  <br>
+
+  <b>Cláusula 5ª</b> – A HKeller fornecerá ao voluntário e ao cão, os materiais necessários para este período de formação, e como informado no item 2.15 deste termo, estes deverão ser devolvidos junto com o cão ao final da socialização. Abaixo relação dos cedidos:
+
+  <br>
+  <br>
+  <br>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Itens</th>
+      <th>Materiais</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Item 1</td>
+      <td>Material A</td>
+    </tr>
+    <tr>
+      <td>Item 2</td>
+      <td>Material B</td>
+    </tr>
+    <!-- Adicione mais linhas conforme necessário -->
+    </tbody>
+  </table>
+
+</div>
+<div>
+
+  <img src="cguia.jpg" alt="cabeça">
+
+  <br>
+  <br>
+  <br>
+
+  <b>DO PRAZO</b>
+
+  <br>
+  <br>
+
+  <b>Cláusula 6ª</b> – O presente termo de adesão será pelo prazo de 18 meses a contar da assinatura deste. Findo o prazo deste termo, caso haja interesse das partes, haverá prorrogação automática, devendo ser efetuado por meio de termo aditivo.
+  6.1 O período para acolhimento de matrizes e reprodutores será de 4 (quatro) anos, prorrogável, intercalado por tempo de permanência na escola, decorrente do manejo reprodutivo.
+
+  <br>
+  <br>
+  <br>
+
+  <b>DA RECISÃO</b>
+
+  <br>
+  <br>
+
+  <b>Cláusula 7ª</b> – O presente termo será rescindido quando vencido o prazo da cláusula 6ª, ou pelo descumprimento de algum artigo do presente, ou a qualquer tempo por solicitação de uma das partes, devendo haver uma comunicação com antecedência mínima de 10 (dez) dias, que resultará na devida devolução do cão e dos materiais fornecidos pela escola.
+
+  <br>
+  <br>
+  <br>
+
+  <b>DAS CONDIÇÕES GERAIS</b>
+
+  <br>
+  <br>
+
+  <b>Cláusula 8ª</b> – O presente termo de adesão passa a vigorar a partir de sua assinatura pelas partes.
+
+  <br>
+  <br>
+  <br>
+
+  <b>DO FORO</b>
+
+  <br>
+  <br>
+
+  <p>
+    <b>Cláusula 9ª</b> – Para dirimir quaisquer controvérsias oriundas deste termo de adesão, as partes elegem o foro da Comarca de Balneário Camboriú/SC.
+    Por estarem assim justos e contratados, firmam o presente instrumento, em 2 (duas) vias de igual teor, juntamente com 2 (duas) testemunhas.
+    Balneário Camboriú, <span id="dia"></span> de <span id="mes"></span> de <span id="ano"></span>.
+
+  </p>
+
+
+
+  <br>
+  <br>
+
+</div>
+
+
+<h1>Detalhes do Voluntário</h1>
+<div th:if="${voluntario != null}">
+  <p>Nome: <span th:text="${voluntario.nome}"></span></p>
+  <p>Nacionalidade: <span th:text="${voluntario.nacionalidade}"></span></p>
+  <p>Estado Civil: <span th:text="${voluntario.estadoCivil}"></span></p>
+  <p>Função: <span th:text="${voluntario.funcao}"></span></p>
+  <p>Identidade: <span th:text="${voluntario.identidade}"></span></p>
+  <p>Rua: <span th:text="${voluntario.rua}"></span></p>
+  <p>Cidade: <span th:text="${voluntario.cidade}"></span></p>
+  <p>Estado: <span th:text="${voluntario.estado}"></span></p>
+  <p>CEP: <span th:text="${voluntario.cep}"></span></p>
+  <p>Número: <span th:text="${voluntario.numero}"></span></p>
+  <p>Email: <span th:text="${voluntario.email}"></span></p>
+  <p>Telefone: <span th:text="${voluntario.telefone}"></span></p>
+  <p>Cão: <span th:text="${voluntario.cao}"></span></p>
+</div>
+<div th:if="${voluntario == null}">
+  <p>Voluntário não encontrado.</p>
+
+
+
+</body>
+</html>
