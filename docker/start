@@ -1,0 +1,2 @@
+#!/bin/bash
+/caes-guia/app/gradlew bootRun
