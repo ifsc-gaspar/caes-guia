@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Verifica se a variável de confirmação está definida
+if [ ! -f import-sucess ]; then
+    # Se a variável de confirmação não está definida, execute o comando de importação
+    export PGPASSWORD=postgres
+	psql -h db -U postgres -d escola-caes-guia -a -f /caes-guia/app/scripts/script_criacao_tabelas.sql
+	psql -h db -U postgres -d escola-caes-guia -a -f /caes-guia/app/scripts/insert_estado.sql
+	psql -h db -U postgres -d escola-caes-guia -a -f /caes-guia/app/scripts/insert_cidade.sql
+	psql -h db -U postgres -d escola-caes-guia -a -f /caes-guia/app/scripts/insert_endereco.sql
+
+	rm /caes-guia/app/src/main/resources/application.properties
+	cp /caes-guia/app/src/main/resources/application-docker.properties /caes-guia/app/src/main/resources/application.properties
+
+    # Verifique o status de saída do comando de importação
+    if [ $? -eq 0 ]; then
+        # Se o comando de importação foi bem-sucedido, defina a variável de confirmação
+        echo "IMPORTACAO REALIZADA COM SUCESSO"
+		echo "Importado" > import-sucess
+    else
+        # Se o comando de importação falhou, saia do script
+        exit 1
+    fi
+fi
