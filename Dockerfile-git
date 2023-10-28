@@ -1,0 +1,31 @@
+# Use a imagem oficial do Debian 11 (Bullseye) como base
+FROM debian:11
+
+RUN apt-get update && apt-get install -y \
+    openjdk-17-jdk \
+    postgresql \
+    git \
+    gradle \
+    nano
+    
+ENV PGPASSWORD=postgres
+
+RUN git clone https://github.com/ifsc-gaspar/caes-guia.git
+
+RUN chmod +x /caes-guia/app/scripts/start  
+RUN chmod +x /caes-guia/app/scripts/import_db
+RUN ln -s /caes-guia/app/scripts/start /start
+RUN ln -s /caes-guia/app/scripts/import_db /import_db
+
+RUN	mv /caes-guia/app/src/main/resources/application.properties /caes-guia/app/src/main/resources/application-old.properties
+RUN	mv /caes-guia/app/src/main/resources/application-docker.properties /caes-guia/app/src/main/resources/application.properties
+
+# Configurar o diretório de trabalho
+WORKDIR /caes-guia/app
+
+# Tornar o script Gradle (`gradlew`) executável
+RUN chmod +x /caes-guia/app/gradlew
+
+# Construir o aplicativo Spring Boot (ignorando os testes)
+RUN /caes-guia/app/gradlew build -x test
+

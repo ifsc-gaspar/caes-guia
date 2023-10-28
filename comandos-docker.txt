@@ -1,0 +1,33 @@
+#PARA DESENVOLVIMENTO
+#Criar o network para que os containers consigam se enxergar
+docker network create caes-network
+#Cria a imagem caes-guia:latest
+docker build -t caes-guia -f Dockerfile-local .
+#Cria o banco de dados e associa ao container db
+docker run --name db -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=escola-caes-guia -d -p 5432:5432 --network caes-network postgres:15.2
+#Cria o servidor e associa ao container server (mas não roda o gradlew bootRun)
+docker run -it -d --name server --network caes-network -p 8080:8080 caes-guia
+#Para importar o banco (executar apenas uma vez, para não duplicar registros)
+docker exec -it server /import_db
+
+#PARA PRODUCÃO
+
+#Importar os dados no banco de dados
+#Criar o network para que os containers consigam se enxergar
+docker network create caes-network
+#Criando a imagem a partir do git
+docker build -t caes-guia -f Dockerfile-git .
+#Cria o banco de dados e associa ao container db
+docker run --name db -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=escola-caes-guia -d -p 5432:5432 --network caes-network postgres:15.2
+#Cria o servidor e associa ao container server (mas não roda o gradlew bootRun)
+docker run -it -d --name server --network caes-network -p 8080:8080 caes-guia
+#Para importar o banco (executar apenas uma vez, para não duplicar registros)
+docker exec -it server /import_db
+#Para iniciar o servidor
+docker exec -d -it server /start
+
+#Adicionais
+#Caso os container estejam desligados
+docker start db
+docker start server
+docker exec -d -it server /start
