@@ -7,7 +7,6 @@ psql -h db -U postgres -d escola-caes-guia -a -f /caes-guia/app/scripts/insert_e
 psql -h db -U postgres -d escola-caes-guia -a -f /caes-guia/app/scripts/insert_cidade.sql
 psql -h db -U postgres -d escola-caes-guia -a -f /caes-guia/app/scripts/insert_endereco.sql
 
-
 # Verifique o status de saída do comando de importação
 if [ $? -eq 0 ]; then
     # Se o comando de importação foi bem-sucedido, defina a variável de confirmação
