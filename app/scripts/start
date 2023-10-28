@@ -6,13 +6,14 @@ wait_for_db() {
     sleep 2
   done
   echo "Banco de dados está pronto. Iniciando o servidor..."
-  /import_db
 }
 
 # Aguarde até que o banco de dados esteja pronto
 wait_for_db
 
-cd /caes-guia/app/ 
+cd /caes-guia/app/
 
 ./gradlew bootRun
 echo 'Para acessar o sistema entre em http://localhost:8080/login'
+echo 'Login: admin@example.com'
+echo 'Senha: senha123'
