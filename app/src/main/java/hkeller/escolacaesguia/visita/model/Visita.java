@@ -1,8 +1,8 @@
 package hkeller.escolacaesguia.visita.model;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "visita")
@@ -54,6 +54,7 @@ public class Visita {
   private Integer simNao;
 
   @Column(name = "data_visita")
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
   private LocalDate dataVisita;
 
   @Column(name = "hora_visita")
