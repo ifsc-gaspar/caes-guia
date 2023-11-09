@@ -17,7 +17,11 @@ public class AtualizarCaoDto {
 
   private String nome;
 
-  private String endereco;
+  private int cep;
+
+  private String numero;
+
+  private String complemento;
 
   private String telefone;
 

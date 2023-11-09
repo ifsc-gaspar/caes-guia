@@ -24,11 +24,7 @@
         <div class="invalid-feedback" th:errors="*{email}"></div>
       </div>
 
-      <div class="mb-3">
-        <label for="endereco" class="form-label">Endereço</label>
-        <input type="text" class="form-control" id="endereco" name="endereco" th:field="*{endereco}" th:errorclass="is-invalid" required/>
-        <div class="invalid-feedback" th:errors="*{endereco}"></div>
-      </div>
+      <div th:replace="fragments/endereco :: endereco"></div>
 
       <div class="mb-3">
         <label for="telefone" class="form-label">Telefone</label>

@@ -33,8 +33,11 @@ public class AtualizarCao implements Serializable {
   @Column(nullable = false)
   private String nome;
 
-  @Column(nullable = false)
-  private String endereco;
+  private int cep;
+
+  private String numero;
+
+  private String complemento;
 
   @Column(nullable = false)
   private String telefone;
