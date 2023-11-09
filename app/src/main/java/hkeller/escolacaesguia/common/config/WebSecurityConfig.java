@@ -27,6 +27,7 @@ public class WebSecurityConfig {
         http.csrf().disable()
             .authorizeHttpRequests((requests) -> requests
                 .requestMatchers("/", "/css/**", "/js/**", "/images/**").permitAll()
+                .requestMatchers("/visitas/cadastro").permitAll()
                 .anyRequest().authenticated()
             )
             .formLogin((form) -> form
