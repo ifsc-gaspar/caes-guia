@@ -24,8 +24,11 @@ public class RequisicaoCadastroAtualizarCaoDto {
   @NotEmpty(message = "Por favor informe o nome")
   private String nome;
 
-  @NotEmpty(message = "Por favor informe o endereço")
-  private String endereco;
+  private int cep;
+
+  private String numero;
+
+  private String complemento;
 
   @NotEmpty(message = "Por favor informe o telefone")
   //@Pattern(regexp="\\([0-9]{2}\\) [0-9]{4,5}-[0-9]{4}", message="Por favor informe um telefone válido")

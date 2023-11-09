@@ -20,10 +20,8 @@
           <input type="email" class="form-control" id="email" name="email" th:field="*{email}" readonly disabled/>
         </div>
 
-        <div class="mb-3">
-          <label for="endereco" class="form-label">Endereço</label>
-          <input type="text" class="form-control" id="endereco" name="endereco" th:field="*{endereco}" readonly disabled/>
-        </div>
+        <div th:replace="fragments/endereco :: endereco(cep='89057024')"></div>
+
 
         <div class="mb-3">
           <label for="telefone" class="form-label">Telefone</label>
