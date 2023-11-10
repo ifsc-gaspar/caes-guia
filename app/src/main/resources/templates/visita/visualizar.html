@@ -173,11 +173,13 @@
       </div>
       <div class="mb-3">
         <label for="simNao" class="form-label">Podemos Levar Cães-Guias Graduados ou em Treinamento na Visita à Sua Escola?</label>
+        <br>
         <input
-          type="text"
-          class="form-control"
+          type="checkbox"
+          class="form-check-input"
           id="simNao"
           name="simNao"
+          value="1"
           th:field="*{simNao}"
           readonly
           disabled
@@ -195,8 +197,6 @@
           disabled
         />
       </div>
-
-      <td class="col-md-1">${visita.dataVisita}</td>
 
       <div class="mb-3">
         <label for="horaVisita" class="form-label">Horário sugerido para a visita</label>
