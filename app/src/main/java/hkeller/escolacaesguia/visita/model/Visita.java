@@ -1,8 +1,8 @@
 package hkeller.escolacaesguia.visita.model;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "visita")
@@ -30,13 +30,13 @@ public class Visita {
   private Integer cep;
 
   @Column(name = "telefone_escola")
-  private Integer telefoneEscola;
+  private Long telefoneEscola;
 
   @Column(name = "nome_responsavel", nullable = false)
   private String nomeResponsavel;
 
   @Column(name = "telefone_responsavel")
-  private Integer telefoneResponsavel;
+  private Long telefoneResponsavel;
 
   @Column(name = "numero_alunos")
   private Integer numeroAlunos;
@@ -54,6 +54,7 @@ public class Visita {
   private Integer simNao;
 
   @Column(name = "data_visita")
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
   private LocalDate dataVisita;
 
   @Column(name = "hora_visita")
@@ -118,11 +119,11 @@ public class Visita {
     this.cep = cep;
   }
 
-  public Integer getTelefoneEscola() {
+  public Long getTelefoneEscola() {
     return telefoneEscola;
   }
 
-  public void setTelefoneEscola(Integer telefoneEscola) {
+  public void setTelefoneEscola(Long telefoneEscola) {
     this.telefoneEscola = telefoneEscola;
   }
 
@@ -134,11 +135,11 @@ public class Visita {
     this.nomeResponsavel = nomeResponsavel;
   }
 
-  public Integer getTelefoneResponsavel() {
+  public Long getTelefoneResponsavel() {
     return telefoneResponsavel;
   }
 
-  public void setTelefoneResponsavel(Integer telefoneResponsavel) {
+  public void setTelefoneResponsavel(Long telefoneResponsavel) {
     this.telefoneResponsavel = telefoneResponsavel;
   }
 
