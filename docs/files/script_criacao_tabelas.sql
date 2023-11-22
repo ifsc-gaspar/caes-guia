@@ -253,15 +253,29 @@ CREATE TABLE Voluntario (
     nacionalidade VARCHAR(255),
     estado_civil VARCHAR(255),
     funcao VARCHAR(255),
-    identidade VARCHAR(255),
-    rua VARCHAR(255),
-    cidade VARCHAR(255),
-    estado VARCHAR(255),
-    cep VARCHAR(20),
-    numero VARCHAR(20),
     email VARCHAR(255),
     telefone VARCHAR(20),
-    cao VARCHAR(20)
+    rua VARCHAR(255),
+    numero VARCHAR(20),
+    cidade VARCHAR(255),
+    cep VARCHAR(20),
+    estado VARCHAR(255),
+    identidade VARCHAR(20), -- RG
+    cpf VARCHAR(20),
+    instagram VARCHAR(255),
+    facebook VARCHAR(255),
+    linkedin VARCHAR(255),
+    formacao VARCHAR(255),
+    curso_formacao VARCHAR(255), -- Nome do curso de formação
+    status_formacao VARCHAR(255),
+    experiencias_profissionais TEXT,
+    experiencias_voluntariado TEXT,
+    tempo_disponivel VARCHAR(255),
+    data_inicio DATE,
+    data_fim DATE,
+    atividades_realizar TEXT,
+    cao VARCHAR(20),
+    cao_id INT REFERENCES Cao(id) -- Chave estrangeira para o ID do cão
 );
 
 -- Tabela formulario
@@ -284,4 +298,18 @@ CREATE TABLE "visita" (
   "data_visita" date,
   "hora_visita" integer,
   "informacoes_extras" text NOT NULL
+);
+
+
+CREATE TABLE Vacina (
+    id SERIAL PRIMARY KEY,
+    Nome_Vacina VARCHAR(255),
+    Tipo_Vacina VARCHAR(50),
+    Numerode_Dose INT,
+    Periodo_Administracao VARCHAR(100),
+    Observacoes TEXT,
+    Faixa_Etaria VARCHAR(20),
+    Obrigatoriedade BOOLEAN,  -- Alteração aqui
+    Acompanhamento_Veterinario BOOLEAN,  -- Alteração aqui
+    Periodo_De_Vermifugacao VARCHAR(100)
 );

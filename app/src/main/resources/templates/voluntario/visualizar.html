@@ -14,7 +14,7 @@
   <div class="container-sm py-4">
     <h1 class="mb-3">Dados do voluntário</h1>
 
-    <form th:object="${voluntarios}" class="needs-validation" novalidate>
+    <form th:object="${voluntario}" class="needs-validation" novalidate>
       <div class="mb-3">
         <label for="nome" class="form-label">Nome completo</label>
         <input
@@ -35,6 +35,30 @@
           id="estadoCivil"
           name="estadoCivil"
           th:field="*{estadoCivil}"
+          readonly
+          disabled
+        />
+      </div>
+      <div class="mb-3">
+        <label for="nacionalidade" class="form-label">Nacionalidade</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="nacionalidade"
+          name="nacionalidade"
+          th:field="*{nacionalidade}"
+          readonly
+          disabled
+        />
+      </div>
+      <div class="mb-3">
+        <label for="cpf" class="form-label">CPF</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="cpf"
+          name="cpf"
+          th:field="*{cpf}"
           readonly
           disabled
         />
@@ -135,6 +159,153 @@
           disabled
         />
       </div>
+      <div class="mb-3">
+        <label for="instagram" class="form-label">Instagram</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="instagram"
+          name="instagram"
+          th:field="*{instagram}"
+          readonly
+          disabled
+        />
+      </div>
+      <div class="mb-3">
+        <label for="facebook" class="form-label">Facebook</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="facebook"
+          name="facebook"
+          th:field="*{facebook}"
+          readonly
+          disabled
+        />
+      </div>
+      <div class="mb-3">
+        <label for="linkedin" class="form-label">Linkedin</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="linkedin"
+          name="linkedin"
+          th:field="*{linkedin}"
+          readonly
+          disabled
+        />
+      </div>
+      <div class="mb-3">
+        <label for="formacao" class="form-label">Formacao</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="formacao"
+          name="formacao"
+          th:field="*{formacao}"
+          readonly
+          disabled
+        />
+      </div>
+      <div class="mb-3">
+        <label for="cursoFormacao" class="form-label">Curso de Formação</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="cursoFormacao"
+          name="cursoFormacao"
+          th:field="*{cursoFormacao}"
+          readonly
+          disabled
+        />
+      </div>
+      <div class="mb-3">
+        <label for="statusFormacao" class="form-label">Status da Formação</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="statusFormacao"
+          name="statusFormacao"
+          th:field="*{statusFormacao}"
+          readonly
+          disabled
+        />
+      </div>
+      <div class="mb-3">
+        <label for="experienciasProfissionais" class="form-label">Experiencias Profissionais</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="experienciasProfissionais"
+          name="experienciasProfissionais"
+          th:field="*{experienciasProfissionais}"
+          readonly
+          disabled
+        />
+      </div>
+      <div class="mb-3">
+        <label for="experienciasVoluntariado" class="form-label">Experiencias com o Voluntariado</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="experienciasVoluntariado"
+          name="experienciasVoluntariado"
+          th:field="*{experienciasVoluntariado}"
+          readonly
+          disabled
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="tempoDisponivel" class="form-label">Tempo Disponivel</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="tempoDisponivel"
+          name="tempoDisponivel"
+          th:field="*{tempoDisponivel}"
+          readonly
+          disabled
+        />
+      </div>
+      <div class="mb-3">
+        <label for="dataInicio" class="form-label">Data Inicio</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="dataInicio"
+          name="dataInicio"
+          th:field="*{dataInicio}"
+          readonly
+          disabled
+        />
+      </div>
+      <div class="mb-3">
+        <label for="dataFim" class="form-label">Data Fim</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="dataFim"
+          name="dataFim"
+          th:field="*{dataFim}"
+          readonly
+          disabled
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="atividadesRealizar" class="form-label">Atividades a realizar</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="atividadesRealizar"
+          name="atividadesRealizar"
+          th:field="*{atividadesRealizar}"
+          readonly
+          disabled
+        />
+      </div>
+
       <div class="mb-3">
         <label for="telefone" class="form-label">Telefone</label>
         <input
