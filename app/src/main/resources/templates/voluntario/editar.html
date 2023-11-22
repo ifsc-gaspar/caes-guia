@@ -24,7 +24,6 @@
           name="nome"
           th:field="*{nome}"
           th:errorclass="is-invalid"
-          placeholder="Nome do voluntário"
           required
         />
         <div class="invalid-feedback" th:errors="*{nome}"></div>
@@ -38,154 +37,328 @@
           name="nacionalidade"
           th:field="*{nacionalidade}"
           th:errorclass="is-invalid"
-          placeholder="Nacionalidade"
-        />
-        <div class="invalid-feedback" th:errors="*{nacionalidade}"></div>
-      </div>
-      <div class="mb-3">
-        <label for="estadoCivil" class="form-label">Estado Civil</label>
-        <input
-          type="text"
-          class="form-control"
-          id="estadoCivil"
-          name="estadoCivil"
-          th:field="*{estadoCivil}"
-          th:errorclass="is-invalid"
-          placeholder="Estado Civil"
-        />
-        <div class="invalid-feedback" th:errors="*{estadoCivil}"></div>
-      </div>
-      <div class="mb-3">
-        <label for="funcao" class="form-label">Função</label>
-        <input
-          type="text"
-          class="form-control"
-          id="funcao"
-          name="funcao"
-          th:field="*{funcao}"
-          th:errorclass="is-invalid"
-          placeholder="Função"
-        />
-        <div class="invalid-feedback" th:errors="*{funcao}"></div>
-      </div>
-      <div class="mb-3">
-        <label for="identidade" class="form-label">Identidade</label>
-        <input
-          type="text"
-          class="form-control"
-          id="identidade"
-          name="identidade"
-          th:field="*{identidade}"
-          th:errorclass="is-invalid"
-          placeholder="Identidade"
-        />
-        <div class="invalid-feedback" th:errors="*{identidade}"></div>
-      </div>
-      <div class="mb-3">
-        <label for="rua" class="form-label">Rua</label>
-        <input
-          type="text"
-          class="form-control"
-          id="rua"
-          name="rua"
-          th:field="*{rua}"
-          th:errorclass="is-invalid"
-          placeholder="Rua"
-        />
-        <div class="invalid-feedback" th:errors="*{rua}"></div>
-      </div>
-      <div class="mb-3">
-        <label for="cidade" class="form-label">Cidade</label>
-        <input
-          type="text"
-          class="form-control"
-          id="cidade"
-          name="cidade"
-          th:field="*{cidade}"
-          th:errorclass="is-invalid"
-          placeholder="Cidade"
-        />
-        <div class="invalid-feedback" th:errors="*{cidade}"></div>
-      </div>
-      <div class="mb-3">
-        <label for="estado" class="form-label">Estado</label>
-        <input
-          type="text"
-          class="form-control"
-          id="estado"
-          name="estado"
-          th:field="*{estado}"
-          th:errorclass="is-invalid"
-          placeholder="Estado"
-        />
-        <div class="invalid-feedback" th:errors="*{estado}"></div>
-      </div>
-      <div class="mb-3">
-        <label for="cep" class="form-label">CEP</label>
-        <input
-          type="text"
-          class="form-control"
-          id="cep"
-          name="cep"
-          th:field="*{cep}"
-          th:errorclass="is-invalid"
-          placeholder="CEP"
-        />
-        <div class="invalid-feedback" th:errors="*{cep}"></div>
-      </div>
-      <div class="mb-3">
-        <label for="numero" class="form-label">Número</label>
-        <input
-          type="text"
-          class="form-control"
-          id="numero"
-          name="numero"
-          th:field="*{numero}"
-          th:errorclass="is-invalid"
-          placeholder="Número"
-        />
-        <div class="invalid-feedback" th:errors="*{numero}"></div>
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input
-          type="email"
-          class="form-control"
-          id="email"
-          name="email"
-          th:field="*{email}"
-          th:errorclass="is-invalid"
-          placeholder="Email"
           required
         />
-        <div class="invalid-feedback" th:errors="*{email}"></div>
-      </div>
-      <div class="mb-3">
-        <label for="telefone" class="form-label">Telefone</label>
-        <input
-          type="text"
-          class="form-control"
-          id="telefone"
-          name="telefone"
-          th:field="*{telefone}"
-          th:errorclass="is-invalid"
-          placeholder="Telefone"
-        />
-        <div class="invalid-feedback" th:errors="*{telefone}"></div>
-      </div>
-      <div class="form-group">
-        <label for="cao">Cão</label>
-        <input
-          type="text"
-          class="form-control"
-          id="cao"
-          name="cao"
-          th:field="*{cao}"
-          th:errorclass="is-invalid"
-          placeholder="Cão"
-        />
-        <div class="invalid-feedback" th:errors="*{cao}"></div>
-      </div>
+        <div class "invalid-feedback" th:errors="*{nacionalidade}"></div>
+  </div>
+  <div class="mb-3">
+    <label for="estadoCivil" class="form-label">Estado Civil</label>
+    <input
+      type="text"
+      class="form-control"
+      id="estadoCivil"
+      name="estadoCivil"
+      th:field="*{estadoCivil}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{estadoCivil}"></div>
+  </div>
+  <div class="mb-3">
+    <label for="funcao" class="form-label">Função</label>
+    <input
+      type="text"
+      class="form-control"
+      id="funcao"
+      name="funcao"
+      th:field="*{funcao}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{funcao}"></div>
+  </div>
+  <div class="mb-3">
+    <label for="identidade" class="form-label">Identidade</label>
+    <input
+      type="text"
+      class="form-control"
+      id="identidade"
+      name="identidade"
+      th:field="*{identidade}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{identidade}"></div>
+  </div>
+  <div class="mb-3">
+    <label for="cpf" class="form-label">CPF</label>
+    <input
+      type="text"
+      class="form-control"
+      id="cpf"
+      name="cpf"
+      th:field="*{cpf}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{cpf}"></div>
+  </div>
+  <div class="mb-3">
+    <label for="rua" class="form-label">Rua</label>
+    <input
+      type="text"
+      class="form-control"
+      id="rua"
+      name="rua"
+      th:field="*{rua}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{rua}"></div>
+  </div>
+  <div class="mb-3">
+    <label for="cidade" class="form-label">Cidade</label>
+    <input
+      type="text"
+      class="form-control"
+      id="cidade"
+      name="cidade"
+      th:field="*{cidade}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{cidade}"></div>
+  </div>
+  <div class="mb-3">
+    <label for="estado" class="form-label">Estado</label>
+    <input
+      type="text"
+      class="form-control"
+      id="estado"
+      name="estado"
+      th:field="*{estado}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{estado}"></div>
+  </div>
+  <div class="mb-3">
+    <label for="cep" class="form-label">CEP</label>
+    <input
+      type="text"
+      class="form-control"
+      id="cep"
+      name="cep"
+      th:field="*{cep}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{cep}"></div>
+  </div>
+  <div class="mb-3">
+    <label for="numero" class="form-label">Número</label>
+    <input
+      type="text"
+      class="form-control"
+      id="numero"
+      name="numero"
+      th:field="*{numero}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{numero}"></div>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      th:field="*{email}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        th:field="*{email}"
+        th:errorclass="is-invalid"
+        required
+      />
+      <div class="invalid-feedback" th:errors="*{email}"></div>
+    </div>
+    <div class="mb-3">
+      <label for="instagram" class="form-label">Instagram</label>
+      <input
+        type="instagram"
+        class="form-control"
+        id="instagram"
+        name="instagram"
+        th:field="*{instagram}"
+        th:errorclass="is-invalid"
+        required
+      />
+      <div class="invalid-feedback" th:errors="*{instagram}"></div>
+    </div>
+    <div class="mb-3">
+      <label for="facebook" class="form-label">Facebook</label>
+      <input
+        type="facebook"
+        class="form-control"
+        id="facebook"
+        name="facebook"
+        th:field="*{facebook}"
+        th:errorclass="is-invalid"
+        required
+      />
+      <div class="invalid-feedback" th:errors="*{facebook}"></div>
+    </div>
+    <div class="mb-3">
+      <label for="linkedin" class="form-label">Linkedin</label>
+      <input
+        type="linkedin"
+        class="form-control"
+        id="linkedin"
+        name="linkedin"
+        th:field="*{linkedin}"
+        th:errorclass="is-invalid"
+        required
+      />
+      <div class="invalid-feedback" th:errors="*{linkedin}"></div>
+    </div>
+  <div class="form-group">
+    <label for="formacao">Nível de Formação:</label>
+    <select id="formacao" name="formacao" class="form-control" required>
+      <option value="" disabled selected>Selecione a formação</option>
+      <option value="Ensino Fundamental">Ensino Fundamental</option>
+      <option value="Ensino Médio">Ensino Médio</option>
+      <option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
+      <option value="Ensino Superior em Andamento">Ensino Superior em Andamento</option>
+      <option value="Ensino Superior Completo">Ensino Superior Completo</option>
+      <option value="Pós-Graduação">Pós-Graduação</option>
+      <option value="Mestrado ou Doutorado">Mestrado ou Doutorado</option>
+    </select>
+  </div>
+
+
+  <div class="mb-3">
+    <label for="cursoFormacao" class="form-label">Nome do curso de formação</label>
+    <input
+      type="cursoFormacao"
+      class="form-control"
+      id="cursoFormacao"
+      name="cursoFormacao"
+      th:field="*{cursoFormacao}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{cursoFormacao}"></div>
+  </div>
+
+  <div class="form-group">
+    <label for="statusFormacao">Status de Formação:</label>
+    <select id="statusFormacao" name="statusFormacao" class="form-control" required>
+      <option value="" disabled selected>Selecione o status da formação</option>
+      <option value="Cursando">Cursando</option>
+      <option value="Concluído">Concluído</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="experienciasProfissionais" class="form-label">Descreva suas experiências profissionais</label>
+    <input
+      type="text"
+      class="form-control"
+      id="experienciasProfissionais"
+      name="experienciasProfissionais"
+      th:field="*{experienciasProfissionais}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{experienciasProfissionais}"></div>
+  </div>
+
+  <div class="mb-3">
+    <label for="experienciasVoluntariado" class="form-label">Descreva suas experiências de atuação como voluntário</label>
+    <input
+      type="text"
+      class="form-control"
+      id="experienciasVoluntariado"
+      name="experienciasVoluntariado"
+      th:field="*{experienciasVoluntariado}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{experienciasVoluntariado}"></div>
+  </div>
+
+  <div class="mb-3">
+    <label for="tempoDisponivel" class="form-label">Tempo disponível para atuar como voluntário</label>
+    <input
+      type="text"
+      class="form-control"
+      id="tempoDisponivel"
+      name="tempoDisponivel"
+      th:field="*{tempoDisponivel}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{tempoDisponivel}"></div>
+  </div>
+
+  <div class="form-group">
+    <label for="dataInicio">Data Início:</label>
+    <input type="date" id="dataInicio" name="data">
+  </div>
+
+  <div class="form-group">
+    <label for="dataFim">Data Fim:</label>
+    <input type="date" id="dataFim" name="data">
+    <div class="invalid-feedback" th:errors="*{dataFim}"></div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="atividadesRealizar">Selecione a atividade de voluntariado que você pode realizar na Escola HKeller:</label>
+    <select id="atividadesRealizar" name="atividadesRealizar" class="form-control" required>
+      <option value="" disabled selected>Selecione a atividade a ser realizada</option>
+      <option value="Administrativo - Documentos, RH, contábil e financeiro">Administrativo - Documentos, RH, contábil e financeiro</option>
+      <option value="Higienização das baias e demais ambientes">Higienização das baias e demais ambientes</option>
+      <option value="Manutenção elétrica">Manutenção elétrica</option>
+      <option value="Manutenção hidráulica">Manutenção hidráulica</option>
+      <option value="Manutenção dos jardins">Manutenção dos jardins</option>
+      <option value="Manutenção da alvenaria, pisos, revestimentos">Manutenção da alvenaria, pisos, revestimentos</option>
+      <option value="Manutenção de computadores e rede de internet">Manutenção de computadores e rede de internet</option>
+      <option value="Marketing digital - mídias sociais">Marketing digital - mídias sociais</option>
+      <option value="Site institucional">Site institucional</option>
+      <option value="Loja Virtual">Loja Virtual</option>
+      <option value="Captação de recursos">Captação de recursos</option>
+      <option value="Organização de eventos">Organização de eventos</option>
+      <option value="Elaboração de projetos para convênios">Elaboração de projetos para convênios</option>
+      <option value="Organizar e realizar pedágios e outras ações">Organizar e realizar pedágios e outras ações</option>
+      <option value="Organização e atendimento de bazar">Organização e atendimento de bazar</option>
+      <option value="Venda de rifas e ação entre amigos">Venda de rifas e ação entre amigos</option>
+      <option value="Apoio em ações sociais em geral">Apoio em ações sociais em geral</option>
+      <option value="Ações institucionais e técnicas">Ações institucionais e técnicas</option>
+    </select>
+  </div>
+
+
+  <div class="mb-3">
+    <label for="telefone" class="form-label">Telefone</label>
+    <input
+      type="text"
+      class="form-control"
+      id="telefone"
+      name="telefone"
+      th:field="*{telefone}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{telefone}"></div>
+  </div>
+  <div class="form-group">
+    <label for="cao">Selecione um Cão:</label>
+    <select class="form-control" id="cao" name="cao">
+      <option value="" disabled selected>Escolha um cão</option>
+      <option th:each="cao : ${caes}" th:value="${cao.nome}" th:text="${cao.nome}"></option>
+    </select>
+  </div>
 
       <a type="button" class="btn btn-secondary" th:href="@{/voluntarios}">Cancelar</a>
       <button type="submit" class="btn btn-primary">Salvar</button>

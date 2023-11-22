@@ -9,8 +9,10 @@ import hkeller.escolacaesguia.voluntario.services.CadastrarVoluntarioServico;
 import hkeller.escolacaesguia.voluntario.services.DeletarVoluntarioServico;
 import hkeller.escolacaesguia.voluntario.services.EditarVoluntarioServico;
 import hkeller.escolacaesguia.voluntario.services.ObterVoluntarioServico;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -58,6 +60,20 @@ public class VoluntarioController {
     return "voluntario/cadastro";
   }
 
+
+  // Mapeia o envio do formulário para cadastrar um novo voluntário
+//  @PostMapping("/cadastro")
+//  public String postCadastro(@Valid @ModelAttribute("voluntario") RequisicaoCadastroVoluntarioDto voluntarioDto, BindingResult result) {
+//    if (result.hasErrors()) {
+//      return "voluntario/cadastro"; // Volte para o formulário de cadastro com erros
+//    }
+//
+//    cadastrarVoluntarioServico.executar(voluntarioDto);
+//
+//    return "redirect:/voluntarios";
+//  }
+
+
   // Mapeia o envio do formulário para cadastrar um novo voluntário
   @PostMapping("/cadastro")
   public String postCadastro(@ModelAttribute("voluntario") RequisicaoCadastroVoluntarioDto voluntarioDto) {
@@ -69,6 +85,7 @@ public class VoluntarioController {
     // Redireciona para a página de listagem de voluntários após o cadastro bem-sucedido
     return "redirect:/voluntarios";
   }
+
 
   @GetMapping("/{idVoluntario}/deletar")
   public String delete(@PathVariable("idVoluntario") Long id) {
@@ -100,6 +117,14 @@ public class VoluntarioController {
     model.addAttribute("voluntario", voluntarioDto);
 
     return "voluntario/templatePDF";
+  }
+
+  @GetMapping("/{idVoluntario}/visualizar")
+  public String visualizarDadosVoluntario(@PathVariable("idVoluntario") Long idVoluntario, Model model){
+    Voluntario voluntarioDto = obterVoluntarioServico.execute(idVoluntario);
+    model.addAttribute("voluntario", voluntarioDto);
+
+    return "voluntario/visualizar";
   }
 
 }
