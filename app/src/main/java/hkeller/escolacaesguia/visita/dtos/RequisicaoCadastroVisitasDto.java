@@ -14,17 +14,23 @@ public class RequisicaoCadastroVisitasDto {
     @Email(message = "Por favor, forneça um endereço de e-mail válido.")
     private String email;
 
-    @NotEmpty(message = "Por favor, preencha o campo Endereço.")
-    private String endereco;
+    @NotEmpty(message = "Por favor, preencha o campo CEP.")
+    private String cep;
+
+    @NotEmpty(message = "Por favor, preencha o campo Logradouro.")
+    private String logradouro;
 
     @NotEmpty(message = "Por favor, preencha o campo Bairro.")
     private String bairro;
 
+    @NotEmpty(message = "Por favor, preencha o campo Numero.")
+    private String numero;
+
     @NotEmpty(message = "Por favor, preencha o campo Cidade.")
     private String cidade;
 
-    @NotEmpty(message = "Por favor, preencha o campo CEP.")
-    private String cep;
+    @NotEmpty(message = "Por favor, preencha o campo Estado.")
+    private String estado;
 
     @NotEmpty(message = "Por favor, preencha o campo Telefone da Escola.")
     private String telefoneEscola;
