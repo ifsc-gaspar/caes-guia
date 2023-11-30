@@ -17,8 +17,14 @@ public class Visita {
   @Column(nullable = false)
   private String email;
 
+  @Column(name = "cep")
+  private Integer cep;
+
   @Column(nullable = false)
-  private String endereco;
+  private String logradouro;
+
+  @Column(nullable = false)
+  private String numero;
 
   @Column(nullable = false)
   private String bairro;
@@ -26,8 +32,8 @@ public class Visita {
   @Column(nullable = false)
   private String cidade;
 
-  @Column(name = "cep")
-  private Integer cep;
+  @Column(nullable = false)
+  private String estado;
 
   @Column(name = "telefone_escola")
   private Long telefoneEscola;
@@ -87,12 +93,28 @@ public class Visita {
     this.email = email;
   }
 
-  public String getEndereco() {
-    return endereco;
+  public Integer getCep() {
+    return cep;
   }
 
-  public void setEndereco(String endereco) {
-    this.endereco = endereco;
+  public void setCep(Integer cep) {
+    this.cep = cep;
+  }
+
+  public String getLogradouro() {
+    return logradouro;
+  }
+
+  public void setLogradouro(String logradouro) {
+    this.logradouro = logradouro;
+  }
+
+  public String getNumero() {
+    return numero;
+  }
+
+  public void setNumero(String numero) {
+    this.numero = numero;
   }
 
   public String getBairro() {
@@ -111,12 +133,12 @@ public class Visita {
     this.cidade = cidade;
   }
 
-  public Integer getCep() {
-    return cep;
+  public String getEstado() {
+    return estado;
   }
 
-  public void setCep(Integer cep) {
-    this.cep = cep;
+  public void setEstado(String estado) {
+    this.estado = estado;
   }
 
   public Long getTelefoneEscola() {

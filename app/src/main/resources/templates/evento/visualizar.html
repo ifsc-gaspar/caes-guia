@@ -5,22 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <title>Cadastro Cão - Helen Keller</title>
+  <title>Visualizar Evento - Helen Keller</title>
 </head>
 <body>
 <div th:insert="fragments/header :: header"></div>
 
 <main>
   <div class="container-sm py-4">
-    <h1 class="mb-3">Cadastro de evento</h1>
+    <h1 class="mb-3">Detalhes do Evento</h1>
 
-    <form
-      method="post"
-      th:action="@{/caes/{idCao}/eventos(idCao=${evento.idCao})}"
-      th:object="${evento}"
-      class="needs-validation"
-      novalidate
-    >
+    <form th:object="${evento}">
       <div class="mb-3">
         <label for="titulo" class="form-label">Título</label>
         <input
@@ -29,10 +23,9 @@
           id="titulo"
           name="titulo"
           th:field="*{titulo}"
-          th:errorclass="is-invalid"
-          required
+          readonly
+          disabled
         />
-        <div class="invalid-feedback" th:errors="*{titulo}"></div>
       </div>
 
       <div class="mb-3">
@@ -43,53 +36,41 @@
           id="data"
           name="data"
           th:field="*{data}"
-          th:errorclass="is-invalid"
+          readonly
+          disabled
         />
-        <div class="invalid-feedback" th:errors="*{data}"></div>
       </div>
+
+      <td class="col-md-1">${evento.data}</td>
 
       <div class="mb-3">
         <label for="categoriaEvento" class="form-label">Categoria</label>
-        <select class="form-select" id="categoriaEvento" name="categoriaEvento" th:field="*{categoriaEvento}" th:errorclass="is-invalid" required>
-          <option value="2">Vacina</option>
-          <option value="3">Treinamento</option>
-          <option value="4">Socializacao</option>
-          <option value="5">Veterinário</option>
-          <option value="6">Banho</option>
-          <option value="1">Outros</option>
-        </select>
-        <div class="invalid-feedback" th:errors="*{categoriaEvento}"></div>
+        <input
+          type="text"
+          class="form-control"
+          id="categoriaEvento"
+          name="categoriaEvento"
+          th:field="*{categoriaEvento}"
+          readonly
+          disabled
+        />
       </div>
+
 
       <div class="mb-3">
         <label for="descricao" class="form-label">Descrição</label>
         <textarea
-          rows="5"
           class="form-control"
           id="descricao"
           name="descricao"
           th:field="*{descricao}"
-          th:errorclass="is-invalid"
+          rows="5"
+          readonly
+          disabled
         ></textarea>
-
-        <div class="invalid-feedback" th:errors="*{descricao}"></div>
       </div>
 
-      <div class="mb-3 form-check">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="notificarTutor"
-          name="notificarTutor"
-          th:field="*{notificarTutor}"
-        >
-        <label class="form-check-label" for="notificarTutor">
-          Notificar tutor
-        </label>
-      </div>
-
-      <a type="button" class="btn btn-secondary" th:href="@{/caes/{idCao}/eventos(idCao=${evento.idCao})}">Cancelar</a>
-      <button type="submit" class="btn btn-primary">Cadastrar</button>
+      <a type="button" class="btn btn-primary" th:href="@{/visitas}">Voltar</a>
     </form>
   </div>
 </main>
