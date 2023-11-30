@@ -21,6 +21,9 @@ public class RequisicaoCadastroEventoDto {
     @NotEmpty(message = "Por favor informe o título")
     private String titulo;
 
+    @NotNull(message = "Por favor informe a categoria")
+    private Integer categoriaEvento;
+
     @NotEmpty(message = "Por favor informe a descrição")
     private String descricao;
 

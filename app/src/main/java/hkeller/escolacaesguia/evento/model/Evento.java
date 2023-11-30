@@ -28,6 +28,9 @@ public class Evento implements Serializable {
     @Column(nullable = false)
     private String descricao;
 
+    @Column(name = "categoria_evento", nullable = false)
+    private Integer categoriaEvento;
+
     @Column(nullable = false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date data;
