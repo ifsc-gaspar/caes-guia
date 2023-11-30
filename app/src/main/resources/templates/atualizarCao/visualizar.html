@@ -8,8 +8,7 @@
     <title>Visualizar atualizações do Cão - Helen Keller</title>
   </head>
 <body>
-  <div th:insert="fragments/header :: header"></div>
-
+<div th:insert="fragments/header :: header"></div>
   <main>
     <div class="container-sm py-4">
       <h1 class="mb-3">Dados de atualização do cão</h1>
@@ -20,8 +19,7 @@
           <input type="email" class="form-control" id="email" name="email" th:field="*{email}" readonly disabled/>
         </div>
 
-        <div th:replace="fragments/endereco :: endereco(cep='89057024')"></div>
-
+        <div th:replace="fragments/endereco :: endereco(disabled=true)"></div>
 
         <div class="mb-3">
           <label for="telefone" class="form-label">Telefone</label>
