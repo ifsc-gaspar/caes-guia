@@ -287,6 +287,7 @@ CREATE TABLE "visita" (
   "cep" integer,
   "logradouro" text NOT NULL,
   "numero" text NOT NULL,
+  "bairro" text NOT NULL,
   "cidade" text NOT NULL,
   "estado" text NOT NULL,
   "telefone_escola" int8,
