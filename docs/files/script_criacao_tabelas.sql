@@ -323,7 +323,7 @@ DECLARE
 BEGIN
     FOR vacina_record IN SELECT * FROM Vacina LOOP
         INSERT INTO evento ("titulo", "descricao", "data", "notificar_tutor", "id_cao")
-        VALUES (vacina_record."Nome_Vacina", 'Evento relacionado à vacina ' || vacina_record."Nome_Vacina", CURRENT_TIMESTAMP, TRUE, NEW."id");
+        VALUES (vacina_record.Nome_Vacina, 'Evento relacionado à vacina ' || vacina_record.Nome_Vacina, CURRENT_TIMESTAMP, TRUE, NEW.id);
     END LOOP;
 
     RETURN NEW;
