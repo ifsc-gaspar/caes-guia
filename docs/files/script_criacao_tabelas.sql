@@ -150,7 +150,7 @@ CREATE TABLE "atualizacoes_cao" (
   "nome_cao" text, 
   "created_at" timestamp DEFAULT (now()),
   "cep" int NOT NULL,
-  "numero" int NOT NULL,
+  "numero" text NOT NULL,
   "complemento" text
 );
 
