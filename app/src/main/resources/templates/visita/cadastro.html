@@ -40,60 +40,7 @@
           />
           <div class="invalid-feedback" th:errors="*{email}"></div>
         </div>
-        <div class="mb-3">
-          <label for="endereco" class="form-label">Endereço - Rua e Número</label>
-          <input
-            type="text"
-            class="form-control"
-            id="endereco"
-            name="endereco"
-            th:field="*{endereco}"
-            th:errorclass="is-invalid"
-            required
-          />
-          <div class="invalid-feedback" th:errors="*{endereco}"></div>
-        </div>
-        <div class="mb-3">
-          <label for="bairro" class="form-label">Bairro</label>
-          <input
-            type="text"
-            class="form-control"
-            id="bairro"
-            name="bairro"
-            th:field="*{bairro}"
-            th:errorclass="is-invalid"
-            required
-          />
-          <div class="invalid-feedback" th:errors="*{bairro}"></div>
-        </div>
-        <div class="mb-3">
-          <label for="cidade" class="form-label">Cidade</label>
-          <input
-            type="text"
-            class="form-control"
-            id="cidade"
-            name="cidade"
-            th:field="*{cidade}"
-            th:errorclass="is-invalid"
-            required
-          />
-          <div class="invalid-feedback" th:errors="*{cidade}"></div>
-        </div>
-        <div class="mb-3">
-          <label for="cep" class="form-label">CEP</label>
-          <input
-            type="text"
-            maxlength="8"
-            class="form-control"
-            id="cep"
-            name="cep"
-            th:field="*{cep}"
-            th:errorclass="is-invalid"
-            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-            required
-          />
-          <div class="invalid-feedback" th:errors="*{cep}"></div>
-        </div>
+        <div th:replace="fragments/endereco :: endereco(disabled=true)"></div>
         <div class="mb-3">
           <label for="telefoneEscola" class="form-label">Telefone da Escola</label>
           <input
