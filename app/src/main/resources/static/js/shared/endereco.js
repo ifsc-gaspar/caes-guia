@@ -20,7 +20,8 @@ buscarCep = (cep) => {
     success: (response) => {
       document.getElementById("estado").value = response.estado;
       document.getElementById("cidade").value = response.cidade;
-      document.getElementById("logradouro").value = `${response.logradouro}, ${response.bairro}`;
+      document.getElementById("logradouro").value = response.logradouro;
+      document.getElementById("bairro").value = response.bairro;
       document.getElementById("endereco-numero").value = response.numero;
     },
     error: (error) => {
