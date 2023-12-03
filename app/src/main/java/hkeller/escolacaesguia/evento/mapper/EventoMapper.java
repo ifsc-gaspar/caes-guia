@@ -8,6 +8,7 @@ public class EventoMapper {
         Evento evento = Evento.builder()
             .titulo(eventoDto.getTitulo())
             .descricao(eventoDto.getDescricao())
+            .categoriaEvento(eventoDto.getCategoriaEvento())
             .data(eventoDto.getData())
             .notificarTutor(eventoDto.isNotificarTutor())
             .build();

@@ -1,29 +1,65 @@
-<div th:fragment="endereco">
+<fieldset th:fragment="endereco (disabled)" th:disabled="${disabled}">
   <div class="mb-3">
     <label for="cep" class="form-label">Cep</label>
-    <input type="text" class="form-control" id="cep" name="cep">
+    <input
+      type="text"
+      class="form-control"
+      id="cep"
+      name="cep"
+      th:field="*{endereco.cep}"
+    />
   </div>
   <div class="mb-3">
     <label for="logradouro" class="form-label">Logradouro</label>
-    <input type="text" class="form-control" id="logradouro" name="logradouro">
+    <input
+      type="text"
+      class="form-control"
+      id="logradouro"
+      name="logradouro"
+      th:field="*{endereco.logradouro}"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="bairro" class="form-label">Bairro</label>
+    <input
+      type="text"
+      class="form-control"
+      id="bairro"
+      name="bairro"
+      th:field="*{endereco.bairro}"
+    />
   </div>
   <div class="mb-3">
     <label for="numero" class="form-label">Numero</label>
-    <input type="text" class="form-control" id="endereco-numero" name="numero">
-  </div>
-  <div class="mb-3">
-    <label for="complemento" class="form-label">Complemento</label>
-    <input type="text" class="form-control" id="complemento" name="complemento">
+    <input
+      type="text"
+      class="form-control"
+      id="numero"
+      name="numero"
+      th:field="*{endereco.numero}"
+    />
   </div>
   <div class="mb-3">
     <label for="cidade" class="form-label">Cidade</label>
-    <input type="text" class="form-control" id="cidade" name="cidade">
+    <input
+      type="text"
+      class="form-control"
+      id="cidade"
+      name="cidade"
+      th:field="*{endereco.cidade}"
+    />
   </div>
   <div class="mb-3">
     <label for="estado" class="form-label">Estado</label>
-    <input type="text" class="form-control" id="estado" name="estado">
+    <input
+      type="text"
+      class="form-control"
+      id="estado"
+      name="estado"
+      th:field="*{endereco.estado}"
+    />
   </div>
 
   <script src="/js/shared/endereco.js"></script>
   <script src="/libs/jquery/jquery-3.6.4.min.js"></script>
-</div>
+</fieldset>

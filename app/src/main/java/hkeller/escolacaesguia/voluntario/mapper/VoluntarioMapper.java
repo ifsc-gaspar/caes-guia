@@ -16,15 +16,30 @@ public class VoluntarioMapper {
       .nacionalidade(voluntarioDto.getNacionalidade())
       .estadoCivil(voluntarioDto.getEstadoCivil())
       .funcao(voluntarioDto.getFuncao())
-      .identidade(voluntarioDto.getIdentidade())
-      .rua(voluntarioDto.getRua())
-      .cidade(voluntarioDto.getCidade())
-      .estado(voluntarioDto.getEstado())
-      .cep(voluntarioDto.getCep())
-      .numero(voluntarioDto.getNumero())
       .email(voluntarioDto.getEmail())
       .telefone(voluntarioDto.getTelefone())
+      .rua(voluntarioDto.getRua())
+      .numero(voluntarioDto.getNumero())
+      .cidade(voluntarioDto.getCidade())
+      .cep(voluntarioDto.getCep())
+      .estado(voluntarioDto.getEstado())
+      .identidade(voluntarioDto.getIdentidade()) // RG
+      .cpf(voluntarioDto.getCpf()) // CPF
+      .instagram(voluntarioDto.getInstagram())
+      .facebook(voluntarioDto.getFacebook())
+      .linkedin(voluntarioDto.getLinkedin())
+      .formacao(voluntarioDto.getFormacao())
+      .cursoFormacao(voluntarioDto.getCursoFormacao()) // Nome do curso de formação
+      .statusFormacao(voluntarioDto.getStatusFormacao())
+      .experienciasProfissionais(voluntarioDto.getExperienciasProfissionais())
+      .experienciasVoluntariado(voluntarioDto.getExperienciasVoluntariado())
+      .tempoDisponivel(voluntarioDto.getTempoDisponivel())
+      .dataInicio(voluntarioDto.getDataInicio())
+      .dataFim(voluntarioDto.getDataFim())
+      .atividadesRealizar(voluntarioDto.getAtividadesRealizar())
       .cao(voluntarioDto.getCao())
+
+      /*por aqui*/
       .build();
 
     return voluntario;
@@ -36,15 +51,32 @@ public class VoluntarioMapper {
       .nacionalidade(voluntarioDto.getNacionalidade())
       .estadoCivil(voluntarioDto.getEstadoCivil())
       .funcao(voluntarioDto.getFuncao())
-      .identidade(voluntarioDto.getIdentidade())
-      .rua(voluntarioDto.getRua())
-      .cidade(voluntarioDto.getCidade())
-      .estado(voluntarioDto.getEstado())
-      .cep(voluntarioDto.getCep())
-      .numero(voluntarioDto.getNumero())
       .email(voluntarioDto.getEmail())
       .telefone(voluntarioDto.getTelefone())
+      .rua(voluntarioDto.getRua())
+      .numero(voluntarioDto.getNumero())
+      .cidade(voluntarioDto.getCidade())
+      .cep(voluntarioDto.getCep())
+      .estado(voluntarioDto.getEstado())
+      .identidade(voluntarioDto.getIdentidade()) // RG
+      .cpf(voluntarioDto.getCpf()) // CPF
+      .instagram(voluntarioDto.getInstagram())
+      .facebook(voluntarioDto.getFacebook())
+      .linkedin(voluntarioDto.getLinkedin())
+      .formacao(voluntarioDto.getFormacao())
+      .cursoFormacao(voluntarioDto.getCursoFormacao()) // Nome do curso de formação
+      .statusFormacao(voluntarioDto.getStatusFormacao())
+      .experienciasProfissionais(voluntarioDto.getExperienciasProfissionais())
+      .experienciasVoluntariado(voluntarioDto.getExperienciasVoluntariado())
+      .tempoDisponivel(voluntarioDto.getTempoDisponivel())
+      .dataInicio(voluntarioDto.getDataInicio())
+      .dataFim(voluntarioDto.getDataFim())
+      .atividadesRealizar(voluntarioDto.getAtividadesRealizar())
       .cao(voluntarioDto.getCao())
+      .cao(voluntarioDto.getCaoNome())
+      .cao(voluntarioDto.getCaoSexo())
+      .cao(voluntarioDto.getCaoRaca())
+      .cao(voluntarioDto.getCaoCor())
       .build();
 
     return voluntario;
@@ -61,15 +93,33 @@ public class VoluntarioMapper {
           .nacionalidade(voluntario.getNacionalidade())
           .estadoCivil(voluntario.getEstadoCivil())
           .funcao(voluntario.getFuncao())
-          .identidade(voluntario.getIdentidade())
-          .rua(voluntario.getRua())
-          .cidade(voluntario.getCidade())
-          .estado(voluntario.getEstado())
-          .cep(voluntario.getCep())
-          .numero(voluntario.getNumero())
           .email(voluntario.getEmail())
           .telefone(voluntario.getTelefone())
+          .rua(voluntario.getRua())
+          .numero(voluntario.getNumero())
+          .cidade(voluntario.getCidade())
+          .cep(voluntario.getCep())
+          .estado(voluntario.getEstado())
+          .identidade(voluntario.getIdentidade()) // RG
+          .cpf(voluntario.getCpf()) // CPF
+          .instagram(voluntario.getInstagram())
+          .facebook(voluntario.getFacebook())
+          .linkedin(voluntario.getLinkedin())
+          .formacao(voluntario.getFormacao())
+          .cursoFormacao(voluntario.getCursoFormacao()) // Nome do curso de formação
+          .statusFormacao(voluntario.getStatusFormacao())
+          .experienciasProfissionais(voluntario.getExperienciasProfissionais())
+          .experienciasVoluntariado(voluntario.getExperienciasVoluntariado())
+          .tempoDisponivel(voluntario.getTempoDisponivel())
+          .dataInicio(voluntario.getDataInicio())
+          .dataFim(voluntario.getDataFim())
+          .atividadesRealizar(voluntario.getAtividadesRealizar())
           .cao(voluntario.getCao())
+          .cao(voluntario.getCaoNome())
+          .cao(voluntario.getCaoSexo())
+          .cao(voluntario.getCaoRaca())
+          .cao(voluntario.getCaoCor())
+          .cao(voluntario.getCaoMicrochip())
           .build()
       );
     }
@@ -84,17 +134,34 @@ public class VoluntarioMapper {
       .nacionalidade(voluntario.getNacionalidade())
       .estadoCivil(voluntario.getEstadoCivil())
       .funcao(voluntario.getFuncao())
-      .identidade(voluntario.getIdentidade())
-      .rua(voluntario.getRua())
-      .cidade(voluntario.getCidade())
-      .estado(voluntario.getEstado())
-      .cep(voluntario.getCep())
-      .numero(voluntario.getNumero())
       .email(voluntario.getEmail())
       .telefone(voluntario.getTelefone())
+      .rua(voluntario.getRua())
+      .numero(voluntario.getNumero())
+      .cidade(voluntario.getCidade())
+      .cep(voluntario.getCep())
+      .estado(voluntario.getEstado())
+      .identidade(voluntario.getIdentidade()) // RG
+      .cpf(voluntario.getCpf()) // CPF
+      .instagram(voluntario.getInstagram())
+      .facebook(voluntario.getFacebook())
+      .linkedin(voluntario.getLinkedin())
+      .formacao(voluntario.getFormacao())
+      .cursoFormacao(voluntario.getCursoFormacao()) // Nome do curso de formação
+      .statusFormacao(voluntario.getStatusFormacao())
+      .experienciasProfissionais(voluntario.getExperienciasProfissionais())
+      .experienciasVoluntariado(voluntario.getExperienciasVoluntariado())
+      .tempoDisponivel(voluntario.getTempoDisponivel())
+      .dataInicio(voluntario.getDataInicio())
+      .dataFim(voluntario.getDataFim())
+      .atividadesRealizar(voluntario.getAtividadesRealizar())
       .cao(voluntario.getCao())
+      .cao(voluntario.getCaoNome())
+      .cao(voluntario.getCaoSexo())
+      .cao(voluntario.getCaoRaca())
+      .cao(voluntario.getCaoCor())
+      .cao(voluntario.getCaoMicrochip())
       .build();
-
     return voluntarioDto;
   }
 }

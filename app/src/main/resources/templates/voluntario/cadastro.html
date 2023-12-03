@@ -20,19 +20,22 @@
 
       <form method="post" th:action="@{/voluntarios/cadastro}" th:object="${voluntario}" class="needs-validation" novalidate>
 
-      <div class="mb-3">
-        <label for="nome" class="form-label">Nome do voluntário</label>
-        <input
-          type="text"
-          class="form-control"
-          id="nome"
-          name="nome"
-          th:field="*{nome}"
-          th:errorclass="is-invalid"
-          required
-        />
-        <div class="invalid-feedback" th:errors="*{nome}"></div>
-      </div>
+
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome do Voluntario</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            name="nome"
+            th:field="*{nome}"
+            th:errorclass="is-invalid"
+            required
+          />
+          <div class="invalid-feedback" th:errors="*{nome}"></div>
+        </div>
+
+
       <div class="mb-3">
         <label for="nacionalidade" class="form-label">Nacionalidade</label>
         <input
@@ -84,6 +87,19 @@
       required
     />
     <div class="invalid-feedback" th:errors="*{identidade}"></div>
+  </div>
+  <div class="mb-3">
+    <label for="cpf" class="form-label">CPF</label>
+    <input
+      type="text"
+      class="form-control"
+      id="cpf"
+      name="cpf"
+      th:field="*{cpf}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{cpf}"></div>
   </div>
   <div class="mb-3">
     <label for="rua" class="form-label">Rua</label>
@@ -164,9 +180,166 @@
     <div class="invalid-feedback" th:errors="*{email}"></div>
   </div>
   <div class="mb-3">
-    <label for="telefone" class="form-label">Telefone</label>
+    <label for="instagram" class="form-label">Instagram</label>
+    <input
+      type="instagram"
+      class="form-control"
+      id="instagram"
+      name="instagram"
+      th:field="*{instagram}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{instagram}"></div>
+  </div>
+  <div class="mb-3">
+    <label for="facebook" class="form-label">Facebook</label>
+    <input
+      type="facebook"
+      class="form-control"
+      id="facebook"
+      name="facebook"
+      th:field="*{facebook}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{facebook}"></div>
+  </div>
+  <div class="mb-3">
+    <label for="linkedin" class="form-label">Linkedin</label>
+    <input
+      type="linkedin"
+      class="form-control"
+      id="linkedin"
+      name="linkedin"
+      th:field="*{linkedin}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{linkedin}"></div>
+  </div>
+  <div class="form-group">
+    <label for="formacao">Nível de Formação:</label>
+    <select id="formacao" name="formacao" class="form-control" required>
+      <option value="" disabled selected>Selecione a formação</option>
+      <option value="Ensino Fundamental">Ensino Fundamental</option>
+      <option value="Ensino Médio">Ensino Médio</option>
+      <option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
+      <option value="Ensino Superior em Andamento">Ensino Superior em Andamento</option>
+      <option value="Ensino Superior Completo">Ensino Superior Completo</option>
+      <option value="Pós-Graduação">Pós-Graduação</option>
+      <option value="Mestrado ou Doutorado">Mestrado ou Doutorado</option>
+    </select>
+  </div>
+
+
+  <div class="mb-3">
+    <label for="cursoFormacao" class="form-label">Nome do curso de formação</label>
+    <input
+      type="cursoFormacao"
+      class="form-control"
+      id="cursoFormacao"
+      name="cursoFormacao"
+      th:field="*{cursoFormacao}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{cursoFormacao}"></div>
+  </div>
+
+  <div class="form-group">
+    <label for="statusFormacao">Status de Formação:</label>
+    <select id="statusFormacao" name="statusFormacao" class="form-control" required>
+      <option value="" disabled selected>Selecione o status da formação</option>
+      <option value="Cursando">Cursando</option>
+      <option value="Concluído">Concluído</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="experienciasProfissionais" class="form-label">Descreva suas experiências profissionais</label>
     <input
       type="text"
+      class="form-control"
+      id="experienciasProfissionais"
+      name="experienciasProfissionais"
+      th:field="*{experienciasProfissionais}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{experienciasProfissionais}"></div>
+  </div>
+
+  <div class="mb-3">
+    <label for="experienciasVoluntariado" class="form-label">Descreva suas experiências de atuação como voluntário</label>
+    <input
+      type="text"
+      class="form-control"
+      id="experienciasVoluntariado"
+      name="experienciasVoluntariado"
+      th:field="*{experienciasVoluntariado}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{experienciasVoluntariado}"></div>
+  </div>
+
+  <div class="mb-3">
+    <label for="tempoDisponivel" class="form-label">Tempo disponível para atuar como voluntário</label>
+    <input
+      type="text"
+      class="form-control"
+      id="tempoDisponivel"
+      name="tempoDisponivel"
+      th:field="*{tempoDisponivel}"
+      th:errorclass="is-invalid"
+      required
+    />
+    <div class="invalid-feedback" th:errors="*{tempoDisponivel}"></div>
+  </div>
+
+  <div class="form-group">
+    <label for="dataInicio">Data Início:</label>
+    <input type="date" id="dataInicio" name="data">
+  </div>
+
+  <div class="form-group">
+    <label for="dataFim">Data Fim:</label>
+    <input type="date" id="dataFim" name="data">
+    <div class="invalid-feedback" th:errors="*{dataFim}"></div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="atividadesRealizar">Selecione a atividade de voluntariado que você pode realizar na Escola HKeller:</label>
+    <select id="atividadesRealizar" name="atividadesRealizar" class="form-control" required>
+      <option value="" disabled selected>Selecione a atividade a ser realizada</option>
+      <option value="Administrativo - Documentos, RH, contábil e financeiro">Administrativo - Documentos, RH, contábil e financeiro</option>
+      <option value="Higienização das baias e demais ambientes">Higienização das baias e demais ambientes</option>
+      <option value="Manutenção elétrica">Manutenção elétrica</option>
+      <option value="Manutenção hidráulica">Manutenção hidráulica</option>
+      <option value="Manutenção dos jardins">Manutenção dos jardins</option>
+      <option value="Manutenção da alvenaria, pisos, revestimentos">Manutenção da alvenaria, pisos, revestimentos</option>
+      <option value="Manutenção de computadores e rede de internet">Manutenção de computadores e rede de internet</option>
+      <option value="Marketing digital - mídias sociais">Marketing digital - mídias sociais</option>
+      <option value="Site institucional">Site institucional</option>
+      <option value="Loja Virtual">Loja Virtual</option>
+      <option value="Captação de recursos">Captação de recursos</option>
+      <option value="Organização de eventos">Organização de eventos</option>
+      <option value="Elaboração de projetos para convênios">Elaboração de projetos para convênios</option>
+      <option value="Organizar e realizar pedágios e outras ações">Organizar e realizar pedágios e outras ações</option>
+      <option value="Organização e atendimento de bazar">Organização e atendimento de bazar</option>
+      <option value="Venda de rifas e ação entre amigos">Venda de rifas e ação entre amigos</option>
+      <option value="Apoio em ações sociais em geral">Apoio em ações sociais em geral</option>
+      <option value="Ações institucionais e técnicas">Ações institucionais e técnicas</option>
+    </select>
+  </div>
+
+
+  <div class="mb-3">
+    <label for="telefone" class="form-label">Telefone</label>
+    <input
+      type="tel"
       class="form-control"
       id="telefone"
       name="telefone"
@@ -178,10 +351,12 @@
   </div>
   <div class="form-group">
     <label for="cao">Selecione um Cão:</label>
-    <select id="cao" name="cao">
-      <option th:each="cao : ${caes}" th:text="${cao.nome}"></option>
+    <select class="form-control" id="cao" name="cao">
+      <option value="" disabled selected>Escolha um cão</option>
+      <option th:each="cao : ${caes}"  th:value="${cao.nome}" th:text="${cao.nome}"></option>
     </select>
   </div>
+
   <a type="button" class="btn btn-secondary" th:href="@{/voluntarios}">Cancelar</a>
   <button type="submit" class="btn btn-primary">Cadastrar</button>
 

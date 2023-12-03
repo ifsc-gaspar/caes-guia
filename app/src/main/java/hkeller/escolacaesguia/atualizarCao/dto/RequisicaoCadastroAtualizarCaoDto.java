@@ -1,13 +1,14 @@
 package hkeller.escolacaesguia.atualizarCao.dto;
-
+import hkeller.escolacaesguia.endereco.dtos.EnderecoDto;
 import jakarta.validation.constraints.Email;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -29,6 +30,9 @@ public class RequisicaoCadastroAtualizarCaoDto {
   private String numero;
 
   private String complemento;
+
+  // Nova propriedade "endereco" do tipo EnderecoDto
+  private EnderecoDto endereco;
 
   @NotEmpty(message = "Por favor informe o telefone")
   //@Pattern(regexp="\\([0-9]{2}\\) [0-9]{4,5}-[0-9]{4}", message="Por favor informe um telefone válido")
