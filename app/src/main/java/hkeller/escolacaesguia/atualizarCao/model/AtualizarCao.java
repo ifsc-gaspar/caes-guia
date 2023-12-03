@@ -33,12 +33,13 @@ public class AtualizarCao implements Serializable {
   @Column(nullable = false)
   private String numero;
 
-  @Column(nullable = false)
-  private int cep;
+//  @Column(nullable = false)
+//  private int cep;
 
   //@OneToOne(cascade = CascadeType.ALL)
-  //@JoinColumn(name = "cep")  // Adicione isso para indicar a coluna de junção
-  //private Endereco endereco = new Endereco();  // Assumindo que Endereco seja a classe correta para representar informações de endereço
+  @ManyToOne
+  @JoinColumn(name = "cep")   // Adicione isso para indicar a coluna de junção
+  private Endereco endereco;  // Assumindo que Endereco seja a classe correta para representar informações de endereço
 
   @Column(nullable = false)
   private String complemento;
