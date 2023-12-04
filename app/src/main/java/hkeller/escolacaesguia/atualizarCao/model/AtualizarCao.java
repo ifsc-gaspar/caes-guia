@@ -1,17 +1,15 @@
 package hkeller.escolacaesguia.atualizarCao.model;
 
-import java.io.Serializable;
-import java.util.Date;
-
-import hkeller.escolacaesguia.endereco.dtos.EnderecoDto;
 import hkeller.escolacaesguia.endereco.model.Endereco;
 import jakarta.persistence.*;
-import org.springframework.format.annotation.DateTimeFormat;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 @Table(name = "atualizacoes_cao")

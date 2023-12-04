@@ -1,8 +1,8 @@
 package hkeller.escolacaesguia.socializador.entity;
 
+import hkeller.escolacaesguia.common.enums.EstadoCivilEnum;
+import hkeller.escolacaesguia.common.enums.GrauInstrucaoEnum;
 import hkeller.escolacaesguia.pessoa.PessoaEntity;
-import hkeller.escolacaesguia.socializador.enums.EnumEstadoCivil;
-import hkeller.escolacaesguia.socializador.enums.EnumGrauInstrucao;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,7 +32,7 @@ public class SocializadorEntity implements Serializable {
 
   @Enumerated(EnumType.STRING)
   @Column(name = "grau_instrucao")
-  private EnumGrauInstrucao grauInstrucao;
+  private GrauInstrucaoEnum grauInstrucao;
 
   private String profissao;
 
@@ -46,7 +46,7 @@ public class SocializadorEntity implements Serializable {
 
   @Enumerated(EnumType.STRING)
   @Column(name = "estado_civil")
-  private EnumEstadoCivil estadoCivil;
+  private EstadoCivilEnum estadoCivil;
 
   @OneToOne(optional = false, orphanRemoval = true, cascade = CascadeType.ALL)
   @JoinColumn(name = "id_pessoa", nullable = false)

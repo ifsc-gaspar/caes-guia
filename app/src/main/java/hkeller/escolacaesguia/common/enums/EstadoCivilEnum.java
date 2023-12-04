@@ -1,24 +1,24 @@
 package hkeller.escolacaesguia.common.enums;
 
 public enum EstadoCivilEnum {
-  solteiro,
-  uniao_estavel,
-  casado,
-  divorciado,
-  viuvo;
+  SOLTEIRO,
+  UNIAO_ESTAVEL,
+  CASADO,
+  DIVORCIADO,
+  VIUVO;
 
   @Override
   public String toString() {
     switch (this) {
-      case solteiro:
+      case SOLTEIRO:
         return "Solteiro";
-      case uniao_estavel:
+      case UNIAO_ESTAVEL:
         return "União estável";
-      case casado:
+      case CASADO:
         return "Casado";
-      case divorciado:
+      case DIVORCIADO:
         return "Divorciado";
-      case viuvo:
+      case VIUVO:
         return "Viuvo";
     }
     return null;

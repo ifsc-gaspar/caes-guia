@@ -2,7 +2,10 @@ package hkeller.escolacaesguia.evento.model;
 
 import hkeller.escolacaesguia.cao.model.Cao;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
@@ -12,9 +15,8 @@ import java.util.Date;
 @Table(name = "evento")
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Builder
-@Getter
-@Setter
 public class Evento implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

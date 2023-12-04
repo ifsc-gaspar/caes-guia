@@ -3,10 +3,7 @@ package hkeller.escolacaesguia.atualizarCao.mapper;
 import hkeller.escolacaesguia.atualizarCao.dto.AtualizarCaoDto;
 import hkeller.escolacaesguia.atualizarCao.dto.RequisicaoCadastroAtualizarCaoDto;
 import hkeller.escolacaesguia.atualizarCao.model.AtualizarCao;
-import hkeller.escolacaesguia.atualizarCao.repository.AtualizarCaoRepositorio;
-import hkeller.escolacaesguia.atualizarCao.services.ObterAtualizacaoCaoServico;
 import hkeller.escolacaesguia.endereco.dtos.EnderecoDto;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -149,11 +149,9 @@
                   name="estadoCivil"
           >
             <option selected value="">Selecione</option>
-            <option value="solteiro">Solteiro(a)</option>
-            <option value="casado">Casado(a)</option>
-            <option value="divorciado">Divorciado(a)</option>
-            <option value="viuvo">Viúvo(a)</option>
-            <option value="uniao_estavel">União Estavel</option>
+            <option th:each="estadoCivil : ${enumEstadoCivil}"
+                    th:value="${estadoCivil}"
+                    th:text="${estadoCivil}"></option>
           </select>
           <div class="invalid-feedback" th:errors="*{estadoCivil}"></div>
         </div>
@@ -168,44 +166,16 @@
                   name="grauInstrucao"
           >
             <option selected value="">Selecione</option>
-            <option value="nao_alfabetizado">Não Alfabetizado</option>
-            <option value="ensino_fundamental_completo">Ensino Fundamental</option>
-            <option value="ensino_fundamental_incompleto">Ensino Fundamental Incompleto</option>
-            <option value="ensino_medio_completo">Ensino Médio</option>
-            <option value="ensino_medio_incompleto">Ensino Médio Incompleto</option>
-            <option value="graduacao_completa">Ensino Superior</option>
-            <option value="graduacao_incompleta">Ensino Superior Incompleto</option>
-            <option value="pos_graduacao">Pós-Graduação</option>
-            <option value="mestrado_ou_doutorado_completo">Mestrado/Doutorado</option>
-            <option value="mestrado_ou_doutorado_incompleto">Mestrado/Doutorado Incompleto</option>
+            <option th:each="grauInstrucao : ${enumGrauInstrucao}"
+                    th:value="${grauInstrucao}"
+                    th:text="${grauInstrucao}"></option>
           </select>
           <div class="invalid-feedback" th:errors="*{estadoCivil}"></div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 mb-3">
-          <label for="cep" class="form-label">Cep</label>
-          <input
-            type="text"
-            class="form-control"
-            id="cep"
-            name="cep"
-            required
-          />
-          <div class="invalid-feedback"></div>
-        </div>
         <div class="col-md-6 mb-3">
-          <label for="endereco" class="form-label">Endereço</label>
-          <input
-            type="text"
-            class="form-control"
-            id="endereco"
-            name="endereco"
-            th:field="*{endereco}"
-            th:errorclass="is-invalid"
-            required
-          />
-          <div class="invalid-feedback" th:errors="*{endereco}"></div>
+          <div th:replace="fragments/endereco :: endereco"></div>
         </div>
       </div>
       <div class="row">
@@ -252,7 +222,7 @@
           </select>
           <div class="invalid-feedback" th:errors="*{estuda}"></div>
         </div>
-        <div class="col-md-5 mb-3" id="localDeEstudoDiv">
+        <div class="col-md-5 mb-3" id="localDeEstudoDiv" style="display: none">
           <label for="localDeEstudo" class="form-label">Local de Estudo</label>
           <input
             type="text"

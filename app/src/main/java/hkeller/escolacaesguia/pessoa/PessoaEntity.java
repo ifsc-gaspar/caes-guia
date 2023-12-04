@@ -19,11 +19,11 @@ public class PessoaEntity {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(nullable = false, name = "nome")
+  @Column(nullable = false,name = "nome")
   private String nome;
-  @Column(nullable = false, name = "data_nascimento")
+  @Column(nullable = false,name = "data_nascimento")
   private Date dataNascimento;
-  @Column(nullable = false, name = "cpf")
+  @Column(nullable = false,name = "cpf")
   private String cpf;
   @Column(name = "telefone_celular")
   private String telefoneCelular;

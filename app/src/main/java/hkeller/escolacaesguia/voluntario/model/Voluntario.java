@@ -1,6 +1,5 @@
 package hkeller.escolacaesguia.voluntario.model;
 
-import hkeller.escolacaesguia.cao.model.Cao;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

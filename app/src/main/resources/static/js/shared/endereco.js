@@ -13,7 +13,7 @@ buscarCep = (cep) => {
   }
 
   const baseUrl = window.location.origin;
-
+  console.log(baseUrl);
   $.ajax({
     url: `${baseUrl}/endereco?cep=${cep}`,
     type: "GET",
