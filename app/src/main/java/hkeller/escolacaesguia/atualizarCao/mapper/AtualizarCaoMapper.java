@@ -39,12 +39,11 @@ public class AtualizarCaoMapper {
       .nome(atualizarCaoDto.getNome())
       //.cep(atualizarCaoDto.getCep())
       .numero(atualizarCaoDto.getNumero())
-
       .complemento(atualizarCaoDto.getComplemento())
       .telefone(atualizarCaoDto.getTelefone())
       .nomeContatoRecado(atualizarCaoDto.getNomeContatoRecado())
       .telefoneContatoRecado(atualizarCaoDto.getTelefoneContatoRecado())
-      .nomeCao(atualizarCaoDto.getNome())
+      .nomeCao(atualizarCaoDto.getNomeCao())
       .situacaoCao(atualizarCaoDto.getSituacaoCao())
       .antiparasitarioInternoData(atualizarCaoDto.getAntiparasitarioInternoData())
       .antiparasitarioExternoData(atualizarCaoDto.getAntiparasitarioExternoData())
@@ -76,7 +75,7 @@ public class AtualizarCaoMapper {
           .complemento(atualizarCao.getComplemento())
           .telefone(atualizarCao.getTelefone())
           .nomeContatoRecado(atualizarCao.getNomeContatoRecado())
-          .nomeCao(atualizarCao.getNome())
+          .nomeCao(atualizarCao.getNomeCao())
           .telefoneContatoRecado(atualizarCao.getTelefoneContatoRecado())
           .situacaoCao(atualizarCao.getSituacaoCao())
           .antiparasitarioInternoData(atualizarCao.getAntiparasitarioInternoData())
@@ -110,7 +109,7 @@ public class AtualizarCaoMapper {
       .telefone(atualizarCao.getTelefone())
       .nomeContatoRecado(atualizarCao.getNomeContatoRecado())
       .telefoneContatoRecado(atualizarCao.getTelefoneContatoRecado())
-      .nomeCao(atualizarCao.getNome())
+      .nomeCao(atualizarCao.getNomeCao())
       .situacaoCao(atualizarCao.getSituacaoCao())
       .antiparasitarioInternoData(atualizarCao.getAntiparasitarioInternoData())
       .antiparasitarioExternoData(atualizarCao.getAntiparasitarioExternoData())
@@ -121,11 +120,6 @@ public class AtualizarCaoMapper {
       .temBlocoVeterinario(atualizarCao.getTemBlocoVeterinario())
       .temCarteirinhaSocializador(atualizarCao.getTemCarteirinhaSocializador())
       .build();
-
-    // AtualizarCaoDto atualizarCaoDto = obterAtualizacaoCaoServico.execute(idAtualizacaoCao);
-    //   // Adicionar informações adicionais ao DTO
-    //   atualizarCaoDto.setBairro(enderecoInfo.getBairro());
-    //   atualizarCaoDto.setCidade(enderecoInfo.getCidade());
 
     return atualizarCaoDto;
   }

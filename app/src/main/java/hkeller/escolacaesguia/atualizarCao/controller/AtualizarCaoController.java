@@ -9,6 +9,7 @@ import hkeller.escolacaesguia.atualizarCao.services.ObterAtualizacaoCaoServico;
 import hkeller.escolacaesguia.atualizarCao.services.ObterListaAtualizacoesCaesServico;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
+import hkeller.escolacaesguia.cao.services.ObterListaCaesServico;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,11 +33,15 @@ public class AtualizarCaoController {
     @Autowired
     ObterAtualizacaoCaoServico obterAtualizacaoCaoServico;
 
-    @GetMapping("cadastro")
+    @Autowired
+    ObterListaCaesServico obterListaCaesServico;
+
+  @GetMapping("cadastro")
     public String getFormularioCadastro(Model model) {
         RequisicaoCadastroAtualizarCaoDto atualizacaoCao = new RequisicaoCadastroAtualizarCaoDto();
 
         model.addAttribute("atualizarCao", atualizacaoCao);
+        model.addAttribute("caes", obterListaCaesServico.getAllCaes());
 
         return "atualizarCao/cadastro";
     }

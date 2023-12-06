@@ -45,7 +45,7 @@ public class RequisicaoCadastroAtualizarCaoDto {
   //@Pattern(regexp="\\([0-9]{2}\\) [0-9]{4,5}-[0-9]{4}", message="Por favor informe um telefone de contato para recados válido")
   private String telefoneContatoRecado;
 
-  @NotEmpty(message = "Por favor informe o nome do cão")
+  @NotEmpty(message = "Por favor selecione o cão")
   private String nomeCao;
 
   @NotNull(message = "Por favor selecione a situação do cão")

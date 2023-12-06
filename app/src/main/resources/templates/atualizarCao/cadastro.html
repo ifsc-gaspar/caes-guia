@@ -51,10 +51,11 @@
       </div>
 
       <div class="mb-3">
-        <label for="nomeCao" class="form-label">Nome do cão</label>
-        <input type="text" class="form-control" id="nomeCao" name="nomeCao" th:field="*{nomeCao}"
-               th:errorclass="is-invalid" required/>
-        <div class="invalid-feedback" th:errors="*{nomeCao}"></div>
+        <label for="nomeCao">Selecione um Cão:</label>
+        <select class="form-control" id="nomeCao" name="nomeCao">
+          <option value="" disabled selected>Escolha um cão</option>
+          <option th:each="cao : ${caes}"  th:value="${cao.nome}" th:text="${cao.nome}"></option>
+        </select>
       </div>
 
       <div class="mb-3">
