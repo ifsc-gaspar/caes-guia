@@ -42,7 +42,7 @@
         />
         <div class="invalid-feedback" th:errors="*{email}"></div>
       </div>
-      <div th:replace="fragments/endereco :: endereco(disabled=true)"></div>
+      <div th:replace="fragments/endereco :: endereco(_)"></div>
       <div class="mb-3">
         <label for="telefoneEscola" class="form-label">Telefone da Escola</label>
         <input
