@@ -3,18 +3,19 @@ package hkeller.escolacaesguia.atualizarCao.controller;
 
 import hkeller.escolacaesguia.atualizarCao.dto.AtualizarCaoDto;
 import hkeller.escolacaesguia.atualizarCao.dto.RequisicaoCadastroAtualizarCaoDto;
-import hkeller.escolacaesguia.atualizarCao.services.*;
+import hkeller.escolacaesguia.atualizarCao.services.CadastrarAtualizacaoCaoServico;
+import hkeller.escolacaesguia.atualizarCao.services.DeletarAtualizacaoCaoServico;
+import hkeller.escolacaesguia.atualizarCao.services.ObterAtualizacaoCaoServico;
+import hkeller.escolacaesguia.atualizarCao.services.ObterListaAtualizacoesCaesServico;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
+import hkeller.escolacaesguia.cao.services.ObterListaCaesServico;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.validation.Valid;
-
-import org.springframework.web.bind.annotation.PostMapping;
 
 
 @Controller
@@ -32,11 +33,15 @@ public class AtualizarCaoController {
     @Autowired
     ObterAtualizacaoCaoServico obterAtualizacaoCaoServico;
 
-    @GetMapping("cadastro")
+    @Autowired
+    ObterListaCaesServico obterListaCaesServico;
+
+  @GetMapping("cadastro")
     public String getFormularioCadastro(Model model) {
         RequisicaoCadastroAtualizarCaoDto atualizacaoCao = new RequisicaoCadastroAtualizarCaoDto();
 
         model.addAttribute("atualizarCao", atualizacaoCao);
+        model.addAttribute("caes", obterListaCaesServico.getAllCaes());
 
         return "atualizarCao/cadastro";
     }
@@ -45,7 +50,7 @@ public class AtualizarCaoController {
     public String post(@Valid @ModelAttribute("atualizarCao") RequisicaoCadastroAtualizarCaoDto atualizacaoCao, BindingResult result, Model model) {
         if (result.hasErrors()) {
             model.addAttribute("atualizarCao", atualizacaoCao);
-
+            model.addAttribute("caes", obterListaCaesServico.getAllCaes());
             return "atualizarCao/cadastro";
         }
 

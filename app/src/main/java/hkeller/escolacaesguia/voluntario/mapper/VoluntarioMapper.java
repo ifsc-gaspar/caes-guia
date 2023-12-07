@@ -38,12 +38,6 @@ public class VoluntarioMapper {
       .dataFim(voluntarioDto.getDataFim())
       .atividadesRealizar(voluntarioDto.getAtividadesRealizar())
       .cao(voluntarioDto.getCao())
-      .cao(voluntarioDto.getCaoNome())
-      .cao(voluntarioDto.getCaoSexo())
-      .cao(voluntarioDto.getCaoRaca())
-      .cao(voluntarioDto.getCaoCor())
-      .cao(voluntarioDto.getCaoMicrochip())
-      .cao(voluntarioDto.getDataNascimento())
 
       /*por aqui*/
       .build();
@@ -83,8 +77,6 @@ public class VoluntarioMapper {
       .cao(voluntarioDto.getCaoSexo())
       .cao(voluntarioDto.getCaoRaca())
       .cao(voluntarioDto.getCaoCor())
-      .cao(voluntarioDto.getCaoMicrochip())
-      .cao(voluntarioDto.getDataNascimento())
       .build();
 
     return voluntario;
@@ -128,7 +120,6 @@ public class VoluntarioMapper {
           .cao(voluntario.getCaoRaca())
           .cao(voluntario.getCaoCor())
           .cao(voluntario.getCaoMicrochip())
-          .cao(voluntario.getDataNascimento())
           .build()
       );
     }
@@ -170,7 +161,6 @@ public class VoluntarioMapper {
       .cao(voluntario.getCaoRaca())
       .cao(voluntario.getCaoCor())
       .cao(voluntario.getCaoMicrochip())
-      .cao(voluntario.getDataNascimento())
       .build();
     return voluntarioDto;
   }

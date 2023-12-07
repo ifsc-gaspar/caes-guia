@@ -7,12 +7,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig {
+public class WebSecurityConfig{
 
     @Autowired
     CustomUserDetailsService userDetailsService;
@@ -26,7 +27,11 @@ public class WebSecurityConfig {
     public SecurityFilterChain SecurityFilterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
             .authorizeHttpRequests((requests) -> requests
-                .requestMatchers("/", "/css/**", "/js/**", "/images/**").permitAll()
+                .requestMatchers(
+                        "/socializador/cadastrar",
+                        "/socializador/salvar",
+                        "/endereco*").permitAll()
+                .requestMatchers("/", "/css/**", "/js/**", "/images/**","/libs/**").permitAll()
                 .requestMatchers("/visitas/cadastro").permitAll()
                 .anyRequest().authenticated()
             )
@@ -34,7 +39,7 @@ public class WebSecurityConfig {
                 .loginPage("/login")
                 .permitAll()
             )
-            .logout((logout) -> logout.permitAll());
+            .logout(LogoutConfigurer::permitAll);
 
         return http.build();
     }

@@ -11,8 +11,7 @@
   <title>Cadastro de Atualização de Cão - Helen Keller</title>
 </head>
 <body>
-<div th:insert="fragments/header :: header"></div>
-
+    <div th:insert="fragments/header :: header"></div>
 <main>
   <div class="container-sm py-4">
     <h1 class="mb-3">Cadastro de Atualização de Cão</h1>
@@ -24,7 +23,7 @@
         <div class="invalid-feedback" th:errors="*{email}"></div>
       </div>
 
-      <div th:replace="fragments/endereco :: endereco"></div>
+      <div th:replace="fragments/endereco :: endereco(_)"></div>
 
       <div class="mb-3">
         <label for="telefone" class="form-label">Telefone</label>
@@ -52,9 +51,11 @@
       </div>
 
       <div class="mb-3">
-        <label for="nomeCao" class="form-label">Nome do cão</label>
-        <input type="text" class="form-control" id="nomeCao" name="nomeCao" th:field="*{nomeCao}"
-               th:errorclass="is-invalid" required/>
+        <label for="nomeCao">Selecione um Cão:</label>
+        <select class="form-control" id="nomeCao" name="nomeCao" th:errorclass="is-invalid" required>
+          <option value="" disabled selected>Escolha um cão</option>
+          <option th:each="cao : ${caes}"  th:value="${cao.nome}" th:text="${cao.nome}"></option>
+        </select>
         <div class="invalid-feedback" th:errors="*{nomeCao}"></div>
       </div>
 

@@ -1,8 +1,9 @@
 package hkeller.escolacaesguia.visita.model;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "visita")

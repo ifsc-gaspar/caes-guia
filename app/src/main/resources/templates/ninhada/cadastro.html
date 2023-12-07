@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script th:src="@{/libs/jquery/jquery-3.6.4.min.js}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"></script>
+
+    <title>Cadastro Ninhada - Helen Keller</title>
+</head>
+<body>
+<div th:insert="fragments/header :: header"></div>
+
+<main>
+    <div class="container-sm py-4">
+        <h1 class="mb-3">Cadastro de ninhada</h1>
+        <div class="container mt-5">
+            <form action="" id="form-ninhada">
+                <div class="row">
+                <div class="mb-3">
+                    <label for="id_mae" class="form-label">Mãe:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="id_mae" readonly>
+                        <input type="text" class="form-control" id="nome_mae" readonly>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#maeModal">
+                                Selecionar Mãe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="id_pai" class="form-label">Pai:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="id_pai" readonly>
+                        <input type="text" class="form-control" id="nome_pai" readonly>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#paiModal">
+                                Selecionar Pai
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="data" class="form-label">Data:</label>
+                    <input type="date" class="form-control" id="data" required>
+                </div>
+                <div class="mb-3">
+                    <label for="tabela-filhotes" class="form-label">Tabela Filhotes:</label>
+                    <table class="table table-striped" id="tabela-filhotes">
+                        <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Sexo</th>
+                            <th scope="col">Cor</th>
+                            <th scope="col">Ação</th>
+                        </tr>
+                        </thead>
+                        <tbody id="filhotes-container">
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Adicionado botão para adicionar filhote -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filhoteModal">
+                    Adicionar Filhote
+                </button>
+
+
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </form>
+        </div>
+
+        <!-- Mãe Modal -->
+        <div class="modal fade" id="maeModal" tabindex="-1" role="dialog" aria-labelledby="maeModalLabel"
+             aria-hidden="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="maeModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" id="searchFemeas" class="form-control mb-3" placeholder="Pesquisar nome..." oninput="pesquisarCao('femeas','searchFemeas','listaFemeas','maeModal')">
+                        <ul class="list-group" id="listaFemeas">
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Filhote Modal -->
+        <div class="modal fade" id="filhoteModal" role="dialog" aria-labelledby="filhoteModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="filhoteModalLabel">Adicionar Filhote</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="nome" class="form-label">Nome do cão</label>
+                                <input
+                                        type="text"
+                                        class="form-control"
+                                        id="nome"
+                                        name="nome"
+                                        required
+                                />
+                                <div class="invalid-feedback"></div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-check form-check-inline">
+                                    <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="sexo"
+                                            id="macho"
+                                            required
+                                            value="Macho"
+
+                                    />
+                                    <label class="form-check-label" for="macho">
+                                        Macho
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="sexo"
+                                            id="femea"
+                                            required
+                                            value="Fêmea"
+                                    />
+                                    <label class="form-check-label" for="femea">
+                                        Fêmea
+                                    </label>
+                                </div>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cor" class="form-label">Cor do cão</label>
+                                <input
+                                        type="text"
+                                        class="form-control"
+                                        id="cor"
+                                        name="cor"
+
+                                />
+                                <div class="invalid-feedback"></div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="adicionarFilhote()">Adicionar Filhote
+                        </button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Pai Modal -->
+        <div class="modal fade" id="paiModal" tabindex="-1" role="dialog" aria-labelledby="paiModalLabel"
+             aria-hidden="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="paiModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" id="searchMachos" class="form-control mb-3" placeholder="Pesquisar nome..." oninput="pesquisarCao('machos','searchMachos','listaMachos','paiModal')">
+                        <ul class="list-group" id="listaMachos">
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+<script th:inline="javascript">
+    var ninhadaDto = {
+        id_mae: null,
+        id_pai: null,
+        data: null,
+        filhotes: []
+    };
+
+    var timeoutId; // Para controlar o atraso na digitação
+
+    function pesquisarCao(tipo, inputId, listaId, modalId) {
+        clearTimeout(timeoutId);
+
+        timeoutId = setTimeout(function () {
+            var searchTerm = $('#' + inputId).val();
+
+            $.ajax({
+                type: 'GET',
+                url: '/ninhada/pesquisar-' + tipo + '/' + searchTerm,
+                success: function (result) {
+                    exibirResultados(result, listaId, modalId);
+                },
+                error: function (error) {
+                    console.error('Erro na requisição AJAX:', error);
+                }
+            });
+        }, 500);
+    }
+
+    function exibirResultados(result, listaId, modalId) {
+        var lista = $('#' + listaId);
+        lista.empty();
+
+        $.each(result, function (index, caoDto) {
+            var listItem = $('<li class="list-group-item"></li>');
+            listItem.text(caoDto.nome);
+
+            var button = $('<button class="btn btn-primary btn-sm float-end">Selecionar</button>');
+            button.on('click', function () {
+                selecionarCao(caoDto.id, caoDto.nome,modalId);
+            });
+
+            listItem.append(button);
+            lista.append(listItem);
+        });
+    }
+
+    function selecionarCao(id, nome, modalId) {
+        if (modalId === 'paiModal') {
+            document.getElementById('id_pai').value = id;
+            document.getElementById('nome_pai').value = nome;
+        } else {
+            document.getElementById('id_mae').value = id;
+            document.getElementById('nome_mae').value = nome;
+        }
+        console.log('Cão selecionado - ID: ' + id + ', Nome: ' + nome);
+    }
+
+    function adicionarFilhote() {
+        var novoFilhote = {
+            nome: $('#nome').val(),
+            cor: $('#cor').val(),
+            dataNascimento: $('#data').val(),
+            sexo: $('input[name="sexo"]:checked').val()
+        };
+
+        // Limpa os campos do modal
+        $('#nome, #cor').val('');
+        $('input[name="sexo"]:checked').prop('checked', false);
+
+        ninhadaDto.filhotes.push(novoFilhote);
+        atualizarTabelaFilhotes();
+    }
+
+    function removerFilhote(index) {
+        ninhadaDto.filhotes.splice(index, 1);
+        atualizarTabelaFilhotes();
+    }
+
+    function atualizarTabelaFilhotes() {
+        var tabelaFilhotes = $('#filhotes-container');
+        tabelaFilhotes.empty();
+
+        $.each(ninhadaDto.filhotes, function (index, filhote) {
+            var newRow = $('<tr></tr>');
+            newRow.append('<td><input type="text" class="form-control" value="' + filhote.nome + '" readonly></td>');
+            newRow.append('<td><input type="text" class="form-control" value="' + filhote.cor + '" readonly></td>');
+            newRow.append('<td><input type="text" class="form-control" value="' + filhote.sexo + '" readonly></td>');
+            newRow.append('<td><button type="button" class="btn btn-danger" onclick="removerFilhote(' + index + ')">Remover</button></td>');
+
+            tabelaFilhotes.append(newRow);
+        });
+    }
+
+    $("#form-ninhada").on("submit", function (event) {
+        event.preventDefault();
+        if ($('#data').val() === '') {
+            alert('Preencha a data');
+            return;
+        }
+        salvarNinhada();
+    });
+
+    function salvarNinhada() {
+        ninhadaDto.data = $('#data').val();
+        ninhadaDto.id_mae = $('#id_mae').val();
+        ninhadaDto.id_pai = $('#id_pai').val();
+
+        $.ajax({
+            url: '/ninhada/salvar',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(ninhadaDto),
+            success: function (data) {
+                console.log('Ninhada salva com sucesso:', data);
+                window.location.href = '/ninhada/cadastro';
+            },
+            error: function (error) {
+                console.error('Erro ao salvar ninhada:', error);
+                // Pop-up de erro
+                alert('Erro ao salvar ninhada');
+                window.location.href = '/ninhada/cadastro';
+            }
+        });
+    }
+</script>
+</body>
+</html>

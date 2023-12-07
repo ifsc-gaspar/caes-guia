@@ -1,8 +1,8 @@
-package hkeller.escolacaesguia.socializador.model;
+package hkeller.escolacaesguia.socializador.entity;
 
-import hkeller.escolacaesguia.pessoa.Pessoa;
-import hkeller.escolacaesguia.socializador.enums.EnumEstadoCivil;
-import hkeller.escolacaesguia.socializador.enums.EnumGrauInstrucao;
+import hkeller.escolacaesguia.common.enums.EstadoCivilEnum;
+import hkeller.escolacaesguia.common.enums.GrauInstrucaoEnum;
+import hkeller.escolacaesguia.pessoa.PessoaEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Getter
 @Entity
 @Table(name = "socializador")
-public class Socializador implements Serializable {
+public class SocializadorEntity implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,13 +29,16 @@ public class Socializador implements Serializable {
   private String orgaoEmissor;
 
   private String endereco;
+
   @Enumerated(EnumType.STRING)
   @Column(name = "grau_instrucao")
-  private EnumGrauInstrucao grauInstrucao;
+  private GrauInstrucaoEnum grauInstrucao;
 
   private String profissao;
+
   @Column(name = "local_trabalho")
   private String localTrabalho;
+
   private boolean estuda;
 
   @Column(name = "local_estudo")
@@ -43,10 +46,10 @@ public class Socializador implements Serializable {
 
   @Enumerated(EnumType.STRING)
   @Column(name = "estado_civil")
-  private EnumEstadoCivil estadoCivil;
+  private EstadoCivilEnum estadoCivil;
 
-  @OneToOne(optional = false, orphanRemoval = true)
+  @OneToOne(optional = false, orphanRemoval = true, cascade = CascadeType.ALL)
   @JoinColumn(name = "id_pessoa", nullable = false)
-  private Pessoa pessoa;
+  private PessoaEntity pessoaEntity;
 
 }

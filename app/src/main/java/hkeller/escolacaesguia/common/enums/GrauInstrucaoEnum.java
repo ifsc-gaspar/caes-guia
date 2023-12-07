@@ -1,39 +1,39 @@
 package hkeller.escolacaesguia.common.enums;
 
 public enum GrauInstrucaoEnum {
-  nao_alfabetizado,
-  ensino_fundamental_incompleto,
-  ensino_fundamental_completo,
-  ensino_medio_incompleto,
-  ensino_medio_completo,
-  graduacao_incompleta,
-  graducao_completa,
-  pos_graduacao,
-  mestrado_ou_doutorado_incompleto,
-  mestrado_ou_douturado_completo;
+  NAO_ALFABETIZADO,
+  ENSINO_FUNDAMENTAL_INCOMPLETO,
+  ENSINO_FUNDAMENTAL_COMPLETO,
+  ENSINO_MEDIO_INCOMPLETO,
+  ENSINO_MEDIO_COMPLETO,
+  GRADUACAO_INCOMPLETA,
+  GRADUCAO_COMPLETA,
+  POS_GRADUACAO,
+  MESTRADO_OU_DOUTORADO_INCOMPLETO,
+  MESTRADO_OU_DOUTURADO_COMPLETO;
 
   @Override
   public String toString() {
     switch (this) {
-      case nao_alfabetizado:
+      case NAO_ALFABETIZADO:
         return "Não alfabetizado";
-      case ensino_fundamental_incompleto:
+      case ENSINO_FUNDAMENTAL_INCOMPLETO:
         return "Ensino fundamental incompleto";
-      case ensino_fundamental_completo:
+      case ENSINO_FUNDAMENTAL_COMPLETO:
         return "Ensino fundamental completo";
-      case ensino_medio_incompleto:
+      case ENSINO_MEDIO_INCOMPLETO:
         return "Ensino médio incompleto";
-      case ensino_medio_completo:
+      case ENSINO_MEDIO_COMPLETO:
         return "Ensino médio completo";
-      case graduacao_incompleta:
+      case GRADUACAO_INCOMPLETA:
         return "Graduação incompleta";
-      case graducao_completa:
+      case GRADUCAO_COMPLETA:
         return "Graduação completa";
-      case pos_graduacao:
+      case POS_GRADUACAO:
         return "Pós graduação";
-      case mestrado_ou_doutorado_incompleto:
+      case MESTRADO_OU_DOUTORADO_INCOMPLETO:
         return "Mestrado ou doutorado incompleto";
-      case mestrado_ou_douturado_completo:
+      case MESTRADO_OU_DOUTURADO_COMPLETO:
         return "Mestrado ou doutorado completo";
     }
     return null;

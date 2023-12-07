@@ -1,12 +1,11 @@
 package hkeller.escolacaesguia.user.models;
 
+import hkeller.escolacaesguia.pessoa.PessoaEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import hkeller.escolacaesguia.pessoa.Pessoa;
 
 import java.io.Serializable;
 
@@ -33,5 +32,5 @@ public class User implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "id_pessoa")
-    private Pessoa pessoa;
+    private PessoaEntity pessoa;
 }

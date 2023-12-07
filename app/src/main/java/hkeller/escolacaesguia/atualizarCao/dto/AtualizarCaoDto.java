@@ -1,11 +1,11 @@
 package hkeller.escolacaesguia.atualizarCao.dto;
 
-import java.util.Date;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
+import hkeller.escolacaesguia.endereco.dtos.EnderecoDto;
 import lombok.Builder;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 @Data
 @Builder
@@ -22,6 +22,9 @@ public class AtualizarCaoDto {
   private String numero;
 
   private String complemento;
+
+  // Nova propriedade "endereco" do tipo EnderecoDto
+  private EnderecoDto endereco;
 
   private String telefone;
 

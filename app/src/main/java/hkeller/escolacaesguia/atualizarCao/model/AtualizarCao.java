@@ -1,20 +1,15 @@
 package hkeller.escolacaesguia.atualizarCao.model;
 
-import java.io.Serializable;
-import java.util.Date;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import hkeller.escolacaesguia.endereco.model.Endereco;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 @Table(name = "atualizacoes_cao")
@@ -33,10 +28,15 @@ public class AtualizarCao implements Serializable {
   @Column(nullable = false)
   private String nome;
 
-  private int cep;
-
+  @Column(nullable = false)
   private String numero;
 
+  //@OneToOne(cascade = CascadeType.ALL)
+  @ManyToOne
+  @JoinColumn(name = "cep")   // Adicione isso para indicar a coluna de junção
+  private Endereco endereco;  // Assumindo que Endereco seja a classe correta para representar informações de endereço
+
+  @Column(nullable = false)
   private String complemento;
 
   @Column(nullable = false)

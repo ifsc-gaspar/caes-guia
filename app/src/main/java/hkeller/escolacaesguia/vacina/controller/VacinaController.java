@@ -9,7 +9,6 @@ import hkeller.escolacaesguia.vacina.services.CadastrarVacinaServico;
 import hkeller.escolacaesguia.vacina.services.DeletarVacinaServico;
 import hkeller.escolacaesguia.vacina.services.EditarVacinaServico;
 import hkeller.escolacaesguia.vacina.services.ObterVacinaServico;
-import hkeller.escolacaesguia.voluntario.model.Voluntario;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

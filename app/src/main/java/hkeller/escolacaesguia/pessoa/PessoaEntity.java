@@ -1,12 +1,7 @@
 package hkeller.escolacaesguia.pessoa;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.sql.Timestamp;
 import java.util.Date;
@@ -18,7 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "pessoa")
-public class Pessoa {
+public class PessoaEntity {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
