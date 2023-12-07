@@ -58,7 +58,7 @@ public class SocializadorController {
         socializadorService.insert(socializadorDto);
         return "redirect:/socializador/listagem";
     }
-    @PostMapping("/{id}/excluir")
+    @GetMapping("/{id}/excluir")
     public String excluir(@PathVariable Long id) {
         socializadorService.delete(id);
         return "redirect:/socializador/listagem";
