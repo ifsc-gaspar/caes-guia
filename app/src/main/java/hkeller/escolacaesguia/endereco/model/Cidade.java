@@ -15,11 +15,4 @@ public class Cidade {
 
   @Column(nullable = false)
   private String nome;
-
-  @ManyToOne
-  @JoinColumn(name = "id_estado")
-  private Estado estado;
-
-  @OneToMany(mappedBy = "cidade")
-  private List<Endereco> enderecos;
 }

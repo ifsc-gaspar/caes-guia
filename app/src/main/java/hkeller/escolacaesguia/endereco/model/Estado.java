@@ -18,7 +18,4 @@ public class Estado {
 
   @Column(nullable = false)
   private String sigla;
-
-  @OneToMany(mappedBy = "estado")
-  private List<Cidade> cidades;
 }
