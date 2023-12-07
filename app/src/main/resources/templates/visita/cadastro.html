@@ -193,6 +193,7 @@
             th:field="*{informacoesExtras}"
             rows="4"
           ></textarea>
+          <div class="invalid-feedback" th:errors="*{informacoesExtras}"></div>
         </div>
 
         <a type="button" class="btn btn-secondary" th:href="@{/visitas}">Cancelar</a>
