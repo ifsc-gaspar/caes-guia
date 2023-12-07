@@ -1,6 +1,5 @@
 package hkeller.escolacaesguia.ninhada.dto;
 
-import hkeller.escolacaesguia.cao.dto.CaoDto;
 import hkeller.escolacaesguia.cao.dto.RequisicaoCadastroCaoDto;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,10 +10,10 @@ import java.util.List;
 
 @Getter
 @Setter
-public class NinhadaDto {
+public class RequisicaoNinhadaDto {
     private Long id_mae;
     private Long id_pai;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date data;
-    private List<CaoDto> filhotes;
+    private List<RequisicaoCadastroCaoDto> filhotes;
 }

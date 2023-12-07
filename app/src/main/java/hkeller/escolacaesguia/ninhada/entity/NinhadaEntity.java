@@ -1,18 +1,22 @@
 package hkeller.escolacaesguia.ninhada.entity;
 
+import hkeller.escolacaesguia.cao.model.Cao;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
 
 
 @Entity
 @Table(name = "ninhada")
 @Setter
 @Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class NinhadaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,9 +28,6 @@ public class NinhadaEntity {
     @NotNull
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date data;
-    @NotNull
-    @ElementCollection
-    @Column(name = "ids_filhotes", columnDefinition = "bigint[]")
-    private long[] ids_filhotes;
-
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "ninhada")
+    private List<Cao> filhotes;
 }

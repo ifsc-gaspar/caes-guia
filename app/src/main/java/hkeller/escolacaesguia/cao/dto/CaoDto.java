@@ -23,4 +23,6 @@ public class CaoDto {
     private Date dataNascimento;
 
     private String sexo;
+
+    private Long id_ninhada;
 }

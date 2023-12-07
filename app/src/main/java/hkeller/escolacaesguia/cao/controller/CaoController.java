@@ -3,6 +3,7 @@ package hkeller.escolacaesguia.cao.controller;
 import hkeller.escolacaesguia.cao.dto.CaoDto;
 import hkeller.escolacaesguia.cao.dto.RequisicaoCadastroCaoDto;
 import hkeller.escolacaesguia.cao.services.*;
+import hkeller.escolacaesguia.ninhada.service.NinhadaService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,10 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 @Controller
 @RequestMapping("/caes")
 public class CaoController {
+
+    @Autowired
+    NinhadaService ninhadaService;
+
     @Autowired
     CadastrarCaoServico cadastrarCaoServico;
 
@@ -94,9 +99,11 @@ public class CaoController {
     @GetMapping("{idCao}/visualizar")
     public String visualizar(@PathVariable("idCao") Long idCao, Model model) {
         CaoDto caoDto = obterCaoServico.execute(idCao);
-
         model.addAttribute("cao", caoDto);
-
+        if (caoDto.getId_ninhada() == null) {
+            return "cao/visualizar";
+        }
+        model.addAttribute("ninhada", ninhadaService.findFilhotes(caoDto));
         return "cao/visualizar";
     }
 }

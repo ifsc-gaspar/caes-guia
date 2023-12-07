@@ -10,10 +10,15 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.Date;
 
 public interface NinhadaEntityRepository extends JpaRepository<NinhadaEntity, Long> {
-
-
-    @Modifying
     @Transactional
-    @Query(value = "INSERT INTO ninhada (id_mae, id_pai, data, ids_filhotes) VALUES (:id_mae, :id_pai, :data, :ids_filhotes)", nativeQuery = true)
-    void saveNinhada(Long id_mae, Long id_pai, Date data, @NotNull long[] ids_filhotes);
+    @Modifying
+    @Query("select n from NinhadaEntity n where n.id_mae = ?1")
+    NinhadaEntity findById_mae(Long id_mae);
+
+    @Transactional
+    @Modifying
+    @Query("select n from NinhadaEntity n where n.id_pai = ?1")
+    NinhadaEntity findById_pai(Long id_pai);
+
+
 }

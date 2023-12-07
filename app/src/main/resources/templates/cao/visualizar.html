@@ -85,6 +85,30 @@
             disabled
           />
         </div>
+        <div class="mb-3" th:if="${cao.getId_ninhada() != null}">
+          <label for="tabela-filhotes" class="form-label">Tabela Filhotes:</label>
+          <table class="table table-striped" id="tabela-filhotes">
+            <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Sexo</th>
+              <th scope="col">Cor</th>
+              <th scope="col">Ação</th>
+            </tr>
+            </thead>
+            <tbody id="filhotes-container">
+              <tr th:each="filhote : ${ninhada.getFilhotes()}">
+                <td th:text="${pai.nome}"></td>
+                <td th:text="${mae.nome}"></td>
+                <td th:text="${filhote.nome}"></td>
+                <td th:text="${filhote.sexo}"></td>
+                <td th:text="${filhote.cor}"></td>
+                <td>
+                  <a th:href="@{/caes/{id}(id=${filhote.id})}" class="btn btn-primary btn-sm">Visualizar</a>
+                </td>
+            </tbody>
+          </table>
+        </div>
 
         <a type="button" class="btn btn-primary" th:href="@{/caes}">Voltar</a>
       </form>
