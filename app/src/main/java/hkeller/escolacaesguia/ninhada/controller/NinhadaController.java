@@ -1,7 +1,7 @@
 package hkeller.escolacaesguia.ninhada.controller;
 
 import hkeller.escolacaesguia.cao.dto.CaoDto;
-import hkeller.escolacaesguia.ninhada.dto.NinhadaDto;
+import hkeller.escolacaesguia.ninhada.dto.RequisicaoNinhadaDto;
 import hkeller.escolacaesguia.ninhada.service.NinhadaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,7 +23,7 @@ public class NinhadaController {
 
     @GetMapping("/cadastro")
     public String cadastrar(Model model){
-        NinhadaDto ninhada = new NinhadaDto();
+        RequisicaoNinhadaDto ninhada = new RequisicaoNinhadaDto();
         model.addAttribute("ninhada", ninhada);
         return "ninhada/cadastro";
     }
@@ -31,8 +31,8 @@ public class NinhadaController {
     //API REST para salvar ninhada
     @ResponseBody
     @PostMapping("/salvar")
-    public String salvar(@RequestBody NinhadaDto ninhadaDto) {
-        ninhadaService.insertNinhada(ninhadaDto);
+    public String salvar(@RequestBody RequisicaoNinhadaDto requisicaoNinhadaDto) {
+        ninhadaService.insertNinhada(requisicaoNinhadaDto);
         return "redirect:/socializador/cadastrar";
     }
 

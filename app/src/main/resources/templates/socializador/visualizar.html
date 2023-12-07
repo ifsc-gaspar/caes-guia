@@ -8,6 +8,7 @@
           integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <title>Cadastro Socializador - Helen Keller</title>
 </head>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
@@ -15,9 +16,9 @@
 <div th:insert="fragments/header :: header"></div>
 <main>
     <div class="container-sm py-4">
-        <h1 class="mb-3">Cadastro de Socializador</h1>
+        <h1 class="mb-3">Visualizar Socializador</h1>
         <form method="post"
-              th:action="@{/socializador/salvar}"
+              id="form"
               th:object="${socializador}"
               class="needs-validation container"
               novalidate
@@ -149,11 +150,9 @@
                             name="estadoCivil"
                     >
                         <option selected value="">Selecione</option>
-                        <option value="SOLTEIRO">Solteiro(a)</option>
-                        <option value="CASADO">Casado(a)</option>
-                        <option value="DIVORCIADO">Divorciado(a)</option>
-                        <option value="VIUVO">Viúvo(a)</option>
-                        <option value="UNIAO_ESTAVEL">União Estável</option>
+                        <option th:each="estadoCivil : ${enumEstadoCivil}"
+                                th:value="${estadoCivil}"
+                                th:text="${estadoCivil}"></option>
                     </select>
                     <div class="invalid-feedback" th:errors="*{estadoCivil}"></div>
                 </div>
@@ -168,16 +167,9 @@
                             name="grauInstrucao"
                     >
                         <option selected value="">Selecione</option>
-                        <option value="NAO_ALFABETIZADO">Não Alfabetizado</option>
-                        <option value="ENSINO_FUNDAMENTAL_COMPLETO">Ensino Fundamental</option>
-                        <option value="ENSINO_FUNDAMENTAL_INCOMPLETO">Ensino Fundamental Incompleto</option>
-                        <option value="ENSINO_MEDIO_COMPLETO">Ensino Médio</option>
-                        <option value="ENSINO_MEDIO_INCOMPLETO">Ensino Médio Incompleto</option>
-                        <option value="GRADUACAO_COMPLETA">Ensino Superior</option>
-                        <option value="GRADUACAO_INCOMPLETA">Ensino Superior Incompleto</option>
-                        <option value="POS_GRADUACAO">Pós-Graduação</option>
-                        <option value="MESTRADO_OU_DOUTORADO_COMPLETO">Mestrado/Doutorado</option>
-                        <option value="MESTRADO_OU_DOUTORADO_INCOMPLETO">Mestrado/Doutorado Incompleto</option>
+                        <option th:each="grauInstrucao : ${enumGrauInstrucao}"
+                                th:value="${grauInstrucao}"
+                                th:text="${grauInstrucao}"></option>
                     </select>
                     <div class="invalid-feedback" th:errors="*{estadoCivil}"></div>
                 </div>
@@ -237,6 +229,7 @@
                             type="text"
                             class="form-control"
                             id="localDeEstudo"
+
                             name="localDeEstudo"
                             th:field="*{localEstudo}"
                             th:errorclass="is-invalid"
@@ -245,7 +238,7 @@
                     <div class="invalid-feedback" th:errors="*{localEstudo}"></div>
                 </div>
             </div>
-            <button class="btn btn-primary" type="submit">Cadastrar</button>
+<!--            <button class="btn btn-primary" type="submit">Cadastrar</button>-->
         </form>
     </div>
 </main>
@@ -259,5 +252,12 @@
             localDeEstudoDiv.style.display = 'none';
         }
     });
+        $(document).ready(function () {
+        $('#form :input').prop('readonly', true);
+
+        $('#form select').prop('disabled', true);
+    });1593
 </script>
-</html>
+<script s   1593
+        rc="/libs/jquery/jquery-3.6.4.min.js"></script>
+</html>\

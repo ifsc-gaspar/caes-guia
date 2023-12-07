@@ -205,7 +205,7 @@
         crossorigin="anonymous"></script>
 
 <script th:inline="javascript">
-    var ninhadaDto = {
+    var requisicaoNinhadaDto = {
         id_mae: null,
         id_pai: null,
         data: null,
@@ -274,12 +274,12 @@
         $('#nome, #cor').val('');
         $('input[name="sexo"]:checked').prop('checked', false);
 
-        ninhadaDto.filhotes.push(novoFilhote);
+        requisicaoNinhadaDto.filhotes.push(novoFilhote);
         atualizarTabelaFilhotes();
     }
 
     function removerFilhote(index) {
-        ninhadaDto.filhotes.splice(index, 1);
+        requisicaoNinhadaDto.filhotes.splice(index, 1);
         atualizarTabelaFilhotes();
     }
 
@@ -287,7 +287,7 @@
         var tabelaFilhotes = $('#filhotes-container');
         tabelaFilhotes.empty();
 
-        $.each(ninhadaDto.filhotes, function (index, filhote) {
+        $.each(requisicaoNinhadaDto.filhotes, function (index, filhote) {
             var newRow = $('<tr></tr>');
             newRow.append('<td><input type="text" class="form-control" value="' + filhote.nome + '" readonly></td>');
             newRow.append('<td><input type="text" class="form-control" value="' + filhote.cor + '" readonly></td>');
@@ -308,15 +308,14 @@
     });
 
     function salvarNinhada() {
-        ninhadaDto.data = $('#data').val();
-        ninhadaDto.id_mae = $('#id_mae').val();
-        ninhadaDto.id_pai = $('#id_pai').val();
-
+        requisicaoNinhadaDto.data = $('#data').val();
+        requisicaoNinhadaDto.id_mae = $('#id_mae').val();
+        requisicaoNinhadaDto.id_pai = $('#id_pai').val();
         $.ajax({
             url: '/ninhada/salvar',
             type: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify(ninhadaDto),
+            data: JSON.stringify(requisicaoNinhadaDto),
             success: function (data) {
                 console.log('Ninhada salva com sucesso:', data);
                 window.location.href = '/ninhada/cadastro';

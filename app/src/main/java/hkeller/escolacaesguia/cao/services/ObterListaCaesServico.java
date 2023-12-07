@@ -17,7 +17,6 @@ public class ObterListaCaesServico {
 
     public Page<Cao> execute(Integer page, Integer size) {
         Page<Cao> caes = caoRepositorio.findAll(PageRequest.of(page, size, Sort.by("id").descending()));
-
         return caes;
     }
 

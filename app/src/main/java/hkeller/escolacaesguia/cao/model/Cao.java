@@ -1,5 +1,8 @@
 package hkeller.escolacaesguia.cao.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import hkeller.escolacaesguia.ninhada.entity.NinhadaEntity;
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -33,4 +36,9 @@ public class Cao implements Serializable {
 
     @Column
     private String sexo;
+
+    @ManyToOne
+    @JoinColumn(name = "id_ninhada")
+    @JsonBackReference
+    private NinhadaEntity ninhada;
 }

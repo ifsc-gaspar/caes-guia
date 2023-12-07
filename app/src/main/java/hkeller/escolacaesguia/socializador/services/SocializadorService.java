@@ -1,6 +1,9 @@
 package hkeller.escolacaesguia.socializador.services;
 
 import hkeller.escolacaesguia.common.mapper.GenericMapper;
+import hkeller.escolacaesguia.endereco.dtos.EnderecoDto;
+import hkeller.escolacaesguia.endereco.mapper.EnderecoMapper;
+import hkeller.escolacaesguia.endereco.model.Endereco;
 import hkeller.escolacaesguia.pessoa.PessoaDto;
 import hkeller.escolacaesguia.pessoa.PessoaEntity;
 import hkeller.escolacaesguia.pessoa.repository.PessoaRepository;
@@ -11,37 +14,51 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
 public class SocializadorService {
 
-  private final SocializadorRepository socializadorRepository;
-  private final PessoaRepository pessoaRepository;
+    private final SocializadorRepository socializadorRepository;
 
-  @Autowired
-  private GenericMapper<SocializadorEntity, SocializadorDto> socializadorMapper;
-  @Autowired
-  private GenericMapper<PessoaEntity, PessoaDto> pessoaMapper;
+    @Autowired
+    private GenericMapper<SocializadorEntity, SocializadorDto> socializadorMapper;
+    @Autowired
+    private GenericMapper<PessoaEntity, PessoaDto> pessoaMapper;
+    @Autowired
+    private GenericMapper<Endereco, EnderecoDto> enderecoMapper;
 
-  public SocializadorService(SocializadorRepository socializadorRepository, PessoaRepository pessoaRepository, GenericMapper<SocializadorEntity, SocializadorDto> socializadorMapper) {
-    this.socializadorRepository = socializadorRepository;
-    this.pessoaRepository = pessoaRepository;
-    this.socializadorMapper = socializadorMapper;
-  }
+    public SocializadorService(SocializadorRepository socializadorRepository) {
+        this.socializadorRepository = socializadorRepository;
+    }
 
-  @Transactional
-  public void insert(SocializadorDto dto) {
-    SocializadorEntity socializadorEntity = socializadorMapper.toEntity(dto, SocializadorEntity.class);
-    socializadorEntity.setPessoaEntity(pessoaMapper.toEntity(dto.getPessoa(), PessoaEntity.class));
-    socializadorRepository.save(socializadorEntity);
-  }
 
-  public void update(SocializadorEntity entity) {
-    socializadorRepository.save(entity);
-  }
-  public SocializadorEntity get(long id) {
-    Optional<SocializadorEntity> socializador = socializadorRepository.findById(id);
-    return socializador.orElse(null);
-  }
+    @Transactional
+    public void insert(SocializadorDto dto) {
+        SocializadorEntity socializadorEntity = socializadorMapper.toEntity(dto, SocializadorEntity.class);
+        socializadorEntity.setPessoaEntity(pessoaMapper.toEntity(dto.getPessoa(), PessoaEntity.class));
+        socializadorEntity.setEndereco(enderecoMapper.toEntity(dto.getEndereco(), Endereco.class));
+        socializadorRepository.save(socializadorEntity);
+    }
+
+    public void update(SocializadorEntity entity) {
+        socializadorRepository.save(entity);
+    }
+
+    public SocializadorEntity find(long id) {
+        Optional<SocializadorEntity> socializador = socializadorRepository.findById(id);
+        return socializador.orElse(null);
+    }
+
+    public List<SocializadorDto> findAll() {
+         return socializadorRepository.findAll()
+                 .stream()
+                 .map(socializadorEntity -> {
+                     SocializadorDto socializadorDto = socializadorMapper.toDto(socializadorEntity, SocializadorDto.class);
+                     socializadorDto.setPessoa(pessoaMapper.toDto(socializadorEntity.getPessoaEntity(), PessoaDto.class));
+                     return socializadorDto;
+                 })
+                 .toList();
+    }
 }

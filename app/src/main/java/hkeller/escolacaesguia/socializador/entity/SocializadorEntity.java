@@ -2,6 +2,7 @@ package hkeller.escolacaesguia.socializador.entity;
 
 import hkeller.escolacaesguia.common.enums.EstadoCivilEnum;
 import hkeller.escolacaesguia.common.enums.GrauInstrucaoEnum;
+import hkeller.escolacaesguia.endereco.model.Endereco;
 import hkeller.escolacaesguia.pessoa.PessoaEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -28,7 +29,9 @@ public class SocializadorEntity implements Serializable {
   @Column(name = "orgao_emissor", nullable = false)
   private String orgaoEmissor;
 
-  private String endereco;
+  @ManyToOne
+  @JoinColumn(name = "cep")
+  private Endereco endereco;
 
   @Enumerated(EnumType.STRING)
   @Column(name = "grau_instrucao")
