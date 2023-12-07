@@ -14,7 +14,6 @@ public class AtualizarCaoMapper {
     return AtualizarCao.builder()
       .email(atualizarCaoDto.getEmail())
       .nome(atualizarCaoDto.getNome())
-      //.cep(atualizarCaoDto.getEndereco().getCep())
       .numero(atualizarCaoDto.getEndereco().getNumero())
       .complemento(atualizarCaoDto.getComplemento())
       .telefone(atualizarCaoDto.getTelefone())

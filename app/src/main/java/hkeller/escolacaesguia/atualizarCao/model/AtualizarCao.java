@@ -31,9 +31,6 @@ public class AtualizarCao implements Serializable {
   @Column(nullable = false)
   private String numero;
 
-//  @Column(nullable = false)
-//  private int cep;
-
   //@OneToOne(cascade = CascadeType.ALL)
   @ManyToOne
   @JoinColumn(name = "cep")   // Adicione isso para indicar a coluna de junção
