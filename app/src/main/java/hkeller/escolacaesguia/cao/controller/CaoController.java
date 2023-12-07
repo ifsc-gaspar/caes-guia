@@ -103,7 +103,7 @@ public class CaoController {
         if (caoDto.getId_ninhada() == null) {
             return "cao/visualizar";
         }
-        model.addAttribute("ninhada", ninhadaService.findFilhotes(caoDto));
+        //model.addAttribute("ninhada", ninhadaService.findFilhotes(caoDto));
         return "cao/visualizar";
     }
 }

@@ -59,7 +59,6 @@ public class CaoMapper {
                 .cor(cao.getCor())
                 .dataNascimento(cao.getDataNascimento())
                 .sexo(cao.getSexo())
-                .id_ninhada(cao.getNinhada().getId())
                 .build();
 
         return caoDto;
