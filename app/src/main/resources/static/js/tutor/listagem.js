@@ -34,9 +34,9 @@ var listagemTutores = {
             },
             construirLinhas: (tutores) => {
                 let linhasTabela = ``;
-            
+
                 tutores.forEach(tutor => linhasTabela += listagemTutores.functions.table.construirLinha(tutor));
-            
+
                 return linhasTabela;
             },
             construirLinha: (tutor) => {
@@ -46,9 +46,9 @@ var listagemTutores = {
 
                 return `
                     <tr id="cao-item-list">
-                        <td class="">${tutor.nome}</td>
-                        <td class="">${tutor.email}</td>
-                        <td class="">${tutor.telefoneCelular}</td>
+                        <td class="">${tutor.pessoa.nome}</td>
+                          <td class="">${tutor.email}</td>
+                        <td class="">${tutor.pessoa.telefoneCelular}</td>
                         <td class=" text-center">
                             <a class="icon-link icon-link-hover" href="${urlTutor}/visualizar" style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
@@ -62,11 +62,11 @@ var listagemTutores = {
                                     <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                                 </svg>
                             </a>
-                            <a 
-                                class="icon-link icon-link-hover ms-3" 
-                                href="${urlTutor}/deletar" 
+                            <a
+                                class="icon-link icon-link-hover ms-3"
+                                href="${urlTutor}/deletar"
                                 style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);"
-                                data-bs-toggle="modal" 
+                                data-bs-toggle="modal"
                                 data-bs-target="#basicModal"
                                 data-bs-modal-header="Excluir tutor"
                                 data-bs-modal-body="Tem certeza que deseja excluir este tutor?"
@@ -86,7 +86,7 @@ var listagemTutores = {
         pagination: {
             carregarListagemTutoresPaginada: () => {
                 const baseUrl = document.getElementById("base-url").value;
-            
+
                 // Documentação: https://pagination.js.org
                 $('#listagem-tutores-container tfoot')
                     .pagination({
@@ -107,27 +107,27 @@ var listagemTutores = {
             },
             onError: (jqXHR, textStatus, errorThrown) => {
                 console.log("formatAjaxError", jqXHR, textStatus, errorThrown);
-            
+
                 listagemTutores.functions.table.hide();
-            
+
                 let message = "Falha ao carregar a listagem de tutores";
                 listagemTutores.functions.alert.show(message, alertType.danger);
             },
             onSuccess: (data, pagination) => {
                 if (!data.length) {
                     listagemTutores.functions.table.hide();
-            
+
                     let message = "Nenhum tutor cadastrado";
                     listagemTutores.functions.alert.show(message, alertType.primary);
-            
+
                     return;
                 }
-            
+
                 listagemTutores.functions.alert.hide();
-            
+
                 var linhasTabela = listagemTutores.functions.table.construirLinhas(data);
                 $("#listagem-tutores-container tbody").html(linhasTabela);
-            
+
                 listagemTutores.functions.table.show();
             }
         }
