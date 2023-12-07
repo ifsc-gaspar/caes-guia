@@ -57,6 +57,7 @@ public class SocializadorService {
                  .map(socializadorEntity -> {
                      SocializadorDto socializadorDto = socializadorMapper.toDto(socializadorEntity, SocializadorDto.class);
                      socializadorDto.setPessoa(pessoaMapper.toDto(socializadorEntity.getPessoaEntity(), PessoaDto.class));
+                        socializadorDto.setEndereco(enderecoMapper.toDto(socializadorEntity.getEndereco(), EnderecoDto.class));
                      return socializadorDto;
                  })
                  .toList();
