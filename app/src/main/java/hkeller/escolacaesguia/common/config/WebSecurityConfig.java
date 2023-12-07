@@ -28,7 +28,7 @@ public class WebSecurityConfig{
         http.csrf().disable()
             .authorizeHttpRequests((requests) -> requests
                 .requestMatchers(
-                        "/socializador/cadastrar",
+                        "/socializador/cadastro",
                         "/socializador/salvar",
                         "/endereco*").permitAll()
                 .requestMatchers("/", "/css/**", "/js/**", "/images/**","/libs/**").permitAll()
