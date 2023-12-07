@@ -50,7 +50,7 @@ public class AtualizarCaoController {
     public String post(@Valid @ModelAttribute("atualizarCao") RequisicaoCadastroAtualizarCaoDto atualizacaoCao, BindingResult result, Model model) {
         if (result.hasErrors()) {
             model.addAttribute("atualizarCao", atualizacaoCao);
-
+            model.addAttribute("caes", obterListaCaesServico.getAllCaes());
             return "atualizarCao/cadastro";
         }
 

@@ -27,8 +27,10 @@ public class RequisicaoCadastroAtualizarCaoDto {
 
   private int cep;
 
+ // @NotEmpty(message = "Por favor informe o numero")
   private String numero;
 
+ // @NotEmpty(message = "Por favor informe o complemento")
   private String complemento;
 
   // Nova propriedade "endereco" do tipo EnderecoDto
@@ -49,6 +51,7 @@ public class RequisicaoCadastroAtualizarCaoDto {
   private String nomeCao;
 
   @NotNull(message = "Por favor selecione a situação do cão")
+  @NotEmpty(message = "Por favor selecione a situação do cão")
   private String situacaoCao;
 
   @NotNull(message = "Por favor informe a data do último antiparasitário interno")
@@ -64,6 +67,7 @@ public class RequisicaoCadastroAtualizarCaoDto {
   private Date trocaColeiraScaliborData;
 
   @NotNull(message = "Por favor selecione se possui caderneta de vacinação")
+  @NotEmpty(message = "Por favor selecione se possui caderneta de vacinação")
   private String temCadernetaVacinacao;
 
   @NotNull(message = "Por favor informe a data da última vacina Nobivac DHPPI+L (V10)")
@@ -75,8 +79,10 @@ public class RequisicaoCadastroAtualizarCaoDto {
   private Date ultimaVacinaNobivacRaiva;
 
   @NotNull(message = "Por favor selecione se possui bloco veterinário")
+  @NotEmpty(message = "Por favor selecione se possui bloco veterinário")
   private String temBlocoVeterinario;
 
   @NotNull(message = "Por favor selecione se possui carteirinha de socializador")
+  @NotEmpty(message = "Por favor selecione se possui carteirinha de socializador")
   private String temCarteirinhaSocializador;
 }
