@@ -22,7 +22,7 @@ buscarCep = (cep) => {
       document.getElementById("cidade").value = response.cidade;
       document.getElementById("logradouro").value = response.logradouro;
       document.getElementById("bairro").value = response.bairro;
-      document.getElementById("endereco-numero").value = response.numero;
+      document.getElementById("numero").value = response.numero;
     },
     error: (error) => {
       console.log("Erro ao buscar o cep");
