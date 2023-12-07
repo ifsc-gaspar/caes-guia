@@ -44,8 +44,8 @@ public class SocializadorController {
 
     @GetMapping("/listagem")
     public String listar(Model model) {
-        List<SocializadorDto> socializador = socializadorService.findAll();
-        model.addAttribute("socializador", socializador);
+        List<SocializadorDto> socializadores = socializadorService.findAll();
+        model.addAttribute("socializadores", socializadores);
         return "socializador/listagem";
     }
 
@@ -56,6 +56,11 @@ public class SocializadorController {
             return "socializador/cadastro";
         }
         socializadorService.insert(socializadorDto);
+        return "redirect:/socializador/listagem";
+    }
+    @PostMapping("/{id}/excluir")
+    public String excluir(@PathVariable Long id) {
+        socializadorService.delete(id);
         return "redirect:/socializador/listagem";
     }
 

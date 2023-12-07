@@ -62,4 +62,8 @@ public class SocializadorService {
                  })
                  .toList();
     }
+
+    public void delete(Long id) {
+        socializadorRepository.deleteById(id);
+    }
 }

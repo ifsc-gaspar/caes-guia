@@ -31,11 +31,11 @@
                             class="form-control"
                             id="nome"
                             name="nome"
-                            th:field="*{pessoa.nome}"
+                            th:field="*{pessoaEntity.nome}"
                             th:errorclass="is-invalid"
                             required
                     />
-                    <div class="invalid-feedback" th:errors="*{pessoa.nome}"></div>
+                    <div class="invalid-feedback" th:errors="*{pessoaEntity.nome}"></div>
                 </div>
 
             </div>
@@ -63,11 +63,11 @@
                             pattern="\([0-9]{2}\)[\s][0-9]{5}-[0-9]{4}"
                             id="telefoneCelular"
                             name="telefoneCelular"
-                            th:field="*{pessoa.telefoneCelular}"
+                            th:field="*{pessoaEntity.telefoneCelular}"
                             th:errorclass="is-invalid"
                             required
                     />
-                    <div class="invalid-feedback" th:errors="*{pessoa.telefoneCelular}"></div>
+                    <div class="invalid-feedback" th:errors="*{pessoaEntity.telefoneCelular}"></div>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="telefoneFixo" class="form-label">Telefone Fixo</label>
@@ -77,11 +77,11 @@
                             id="telefoneFixo"
                             name="telefoneFixo"
                             pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4}"
-                            th:field="*{pessoa.telefoneFixo}"
+                            th:field="*{pessoaEntity.telefoneFixo}"
                             th:errorclass="is-invalid"
                             required
                     />
-                    <div class="invalid-feedback" th:errors="*{pessoa.telefoneCelular}"></div>
+                    <div class="invalid-feedback" th:errors="*{pessoaEntity.telefoneFixo}"></div>
                 </div>
             </div>
             <div class="row">
@@ -92,11 +92,11 @@
                             class="form-control"
                             id="cpf"
                             name="cpf"
-                            th:field="*{pessoa.cpf}"
+                            th:field="*{pessoaEntity.id}"
                             th:errorclass="is-invalid"
                             required
                     />
-                    <div class="invalid-feedback" th:errors="*{pessoa.cpf}"></div>
+                    <div class="invalid-feedback" th:errors="*{pessoaEntity.cpf}"></div>
                 </div>
                 <div class="col-md-2 mb-3">
                     <label for="rg" class="form-label">RG</label>
@@ -133,11 +133,11 @@
                             class="form-control"
                             id="dtNascimento"
                             name="dtNascimento"
-                            th:field="*{pessoa.dataNascimento}"
+                            th:field="*{pessoaEntity.dataNascimento}"
                             th:errorclass="is-invalid"
                             required
                     />
-                    <div class="invalid-feedback" th:errors="*{pessoa.dataNascimento}"></div>
+                    <div class="invalid-feedback" th:errors="*{pessoaEntity.dataNascimento}"></div>
                 </div>
                 <div class="col-md-3 mb-3">
                     <label for="estadoCivil" class="form-label">Estado Civil</label>
@@ -238,7 +238,7 @@
                     <div class="invalid-feedback" th:errors="*{localEstudo}"></div>
                 </div>
             </div>
-<!--            <button class="btn btn-primary" type="submit">Cadastrar</button>-->
+            <button class="btn btn-primary" type="button" onclick="window.location.href='/socializador/listagem'">Voltar</button>
         </form>
     </div>
 </main>
