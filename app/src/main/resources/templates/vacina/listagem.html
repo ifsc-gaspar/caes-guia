@@ -12,9 +12,9 @@
 <div th:insert="fragments/header :: header"></div>
 
 <div class="container-sm py-4" id="listagem-vacinas-container">
-  <h1 class="mb-3">Vacinas</h1>
+  <h1 class="mb-3">Medicamentos</h1>
 
-  <a class="btn btn-primary mb-3" th:href="@{/vacinas/cadastro}">Cadastrar vacina</a>
+  <a class="btn btn-primary mb-3" th:href="@{/vacinas/cadastro}">Cadastrar Medicamento</a>
 
   <table class="table table-hover" id="vacinas-table">
     <thead>
@@ -27,7 +27,7 @@
       <th scope="col">Faixa Etária</th>
       <th scope="col">Obrigatoriedade</th>
       <th scope="col">Acompanhamento Veterinário</th>
-      <th scope="col">Período de Vermifugação</th>
+      <th scope="col">Tipo de Medicação</th>
       <th scope="col" class="text-center">Ações</th>
     </tr>
     </thead>

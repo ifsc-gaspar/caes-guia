@@ -3,6 +3,7 @@ package hkeller.escolacaesguia.voluntario.dto;
 import lombok.Builder;
 import lombok.Data;
 
+
 import java.util.Date;
 
 @Data
@@ -10,6 +11,7 @@ import java.util.Date;
 
 public class VoluntarioDto {
   private Long id;
+  private String caoid;
   private String nome;
   private String nacionalidade;
   private String estadoCivil;
@@ -36,15 +38,4 @@ public class VoluntarioDto {
   private Date dataFim;
   private String atividadesRealizar;
   private String cao;
-  //private Long caoId;
-  //aqui
-  private String caoNome;
-  private String caoSexo;
-  private String caoRaca;
-  private Long caoMicrochip;
-  private String caoCor;
-  private Date caoDataNascimento;
-
-
-
 }

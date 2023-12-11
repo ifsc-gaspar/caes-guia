@@ -1,6 +1,7 @@
 package hkeller.escolacaesguia.vacina.services;
 
 import hkeller.escolacaesguia.vacina.repository.VacinaRepositorio;
+import hkeller.escolacaesguia.voluntario.repository.VoluntarioRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

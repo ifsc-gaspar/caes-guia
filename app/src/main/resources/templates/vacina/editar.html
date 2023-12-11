@@ -12,9 +12,20 @@
 
 <main>
   <div class="container-sm py-4">
-    <h1 class="mb-3">Editar Vacina</h1>
+    <h1 class="mb-3">Editar Medicmento</h1>
 
     <form method="post" th:action="@{/vacinas/{idVacina}/editar(idVacina=${vacina.id})}" th:object="${vacina}" class="needs-validation" novalidate>
+
+      <div class="form-group">
+        <label for="periodoDeVermifugacao">Tipo de Medicação:</label>
+        <select id="periodoDeVermifugacao" name="periodoDeVermifugacao" class="form-control" required>
+          <option value="" disabled selected>Selecione tipo de medicamento</option>
+          <option value="Vacina">Vacina</option>
+          <option value="Vermifugo">Vermífugo</option>
+          <option value="Outro">Outro</option>
+        </select>
+      </div>
+
       <div class="mb-3">
         <label for="nomeVacina" class="form-label">Nome da Vacina</label>
         <input
@@ -115,18 +126,6 @@
         <label class="form-check-label" for="acompanhamentoVeterinario">Acompanhamento Veterinário</label>
       </div>
 
-      <div class="mb-3">
-        <label for="periodoDeVermifugacao" class="form-label">Período de Vermifugação</label>
-        <input
-          type="text"
-          class="form-control"
-          id="periodoDeVermifugacao"
-          name="periodoDeVermifugacao"
-          th:field="*{periodoDeVermifugacao}"
-          th:errorclass="is-invalid"
-        />
-        <div class="invalid-feedback" th:errors="*{periodoDeVermifugacao}"></div>
-      </div>
       <a type="button" class="btn btn-secondary" th:href="@{/vacinas}">Cancelar</a>
       <button type="submit" class="btn btn-primary">Salvar</button>
     </form>

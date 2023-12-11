@@ -1,5 +1,6 @@
 package hkeller.escolacaesguia.voluntario.model;
 
+import hkeller.escolacaesguia.cao.model.Cao;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,6 +26,9 @@ public class Voluntario implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
+
+  @Column(name = "cao_id")
+  private String Caoid;
 
   @Column(nullable = false, length = 255)
   private String nome;
@@ -89,24 +93,6 @@ public class Voluntario implements Serializable {
   @Column(nullable = false, length = 20)
   private String cao;
 
-  @Column(nullable = false, length = 100)
-  private String caoNome;
-
-  @Column(nullable = false, length = 100)
-  private String caoRaca;
-
-  @Column(nullable = false, length = 100)
-  private String caoCor;
-
-  @Column(nullable = false, length = 50)
-  private String caoSexo;
-
-  @Column(nullable = false, length = 100)
-  private String caoMicrochip;
-
-  @Temporal(TemporalType.DATE)
-  private Date caoDataNascimento;
-
   @Column(nullable = false)
   private String rua;
 
@@ -121,6 +107,7 @@ public class Voluntario implements Serializable {
 
   @Column(nullable = false, length = 20)
   private String numero;
+
 
 
 }

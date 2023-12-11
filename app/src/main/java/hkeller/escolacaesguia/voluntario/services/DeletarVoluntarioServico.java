@@ -1,5 +1,6 @@
 package hkeller.escolacaesguia.voluntario.services;
 
+import hkeller.escolacaesguia.cao.repository.CaoRepositorio;
 import hkeller.escolacaesguia.voluntario.repository.VoluntarioRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

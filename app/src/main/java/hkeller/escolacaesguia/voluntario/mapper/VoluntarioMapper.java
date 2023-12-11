@@ -6,6 +6,8 @@ import hkeller.escolacaesguia.voluntario.model.Voluntario;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.Date; // Importe Date da biblioteca correta
+
 
 
 public class VoluntarioMapper {
@@ -38,8 +40,6 @@ public class VoluntarioMapper {
       .dataFim(voluntarioDto.getDataFim())
       .atividadesRealizar(voluntarioDto.getAtividadesRealizar())
       .cao(voluntarioDto.getCao())
-
-      /*por aqui*/
       .build();
 
     return voluntario;
@@ -73,10 +73,6 @@ public class VoluntarioMapper {
       .dataFim(voluntarioDto.getDataFim())
       .atividadesRealizar(voluntarioDto.getAtividadesRealizar())
       .cao(voluntarioDto.getCao())
-      .cao(voluntarioDto.getCaoNome())
-      .cao(voluntarioDto.getCaoSexo())
-      .cao(voluntarioDto.getCaoRaca())
-      .cao(voluntarioDto.getCaoCor())
       .build();
 
     return voluntario;
@@ -89,6 +85,7 @@ public class VoluntarioMapper {
       voluntariosDto.add(
         VoluntarioDto.builder()
           .id(voluntario.getId())
+          .caoid(voluntario.getCaoid())
           .nome(voluntario.getNome())
           .nacionalidade(voluntario.getNacionalidade())
           .estadoCivil(voluntario.getEstadoCivil())
@@ -115,11 +112,6 @@ public class VoluntarioMapper {
           .dataFim(voluntario.getDataFim())
           .atividadesRealizar(voluntario.getAtividadesRealizar())
           .cao(voluntario.getCao())
-          .cao(voluntario.getCaoNome())
-          .cao(voluntario.getCaoSexo())
-          .cao(voluntario.getCaoRaca())
-          .cao(voluntario.getCaoCor())
-          .cao(voluntario.getCaoMicrochip())
           .build()
       );
     }
@@ -130,6 +122,7 @@ public class VoluntarioMapper {
   public static VoluntarioDto mapToVoluntarioDto(Voluntario voluntario) {
     VoluntarioDto voluntarioDto = VoluntarioDto.builder()
       .id(voluntario.getId())
+      .caoid(voluntario.getCaoid())
       .nome(voluntario.getNome())
       .nacionalidade(voluntario.getNacionalidade())
       .estadoCivil(voluntario.getEstadoCivil())
@@ -156,12 +149,8 @@ public class VoluntarioMapper {
       .dataFim(voluntario.getDataFim())
       .atividadesRealizar(voluntario.getAtividadesRealizar())
       .cao(voluntario.getCao())
-      .cao(voluntario.getCaoNome())
-      .cao(voluntario.getCaoSexo())
-      .cao(voluntario.getCaoRaca())
-      .cao(voluntario.getCaoCor())
-      .cao(voluntario.getCaoMicrochip())
       .build();
+
     return voluntarioDto;
   }
 }
