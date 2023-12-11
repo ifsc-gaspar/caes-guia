@@ -3,6 +3,8 @@ package hkeller.escolacaesguia.vacina.controller;
 
 import hkeller.escolacaesguia.vacina.model.Vacina;
 import hkeller.escolacaesguia.vacina.services.ObterListaVacinaServico;
+import hkeller.escolacaesguia.voluntario.model.Voluntario;
+import hkeller.escolacaesguia.voluntario.services.ObterListaVoluntarioServico;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.GetMapping;

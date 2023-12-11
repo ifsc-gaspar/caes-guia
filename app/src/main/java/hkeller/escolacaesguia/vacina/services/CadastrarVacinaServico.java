@@ -1,6 +1,7 @@
 package hkeller.escolacaesguia.vacina.services;
 
 import hkeller.escolacaesguia.vacina.dto.RequisicaoCadastroVacinaDto;
+import hkeller.escolacaesguia.vacina.mapper.VacinaMapper;
 import hkeller.escolacaesguia.vacina.model.Vacina;
 import hkeller.escolacaesguia.vacina.repository.VacinaRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
